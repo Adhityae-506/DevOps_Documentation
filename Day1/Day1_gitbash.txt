@@ -1,0 +1,234 @@
+adhit@Adhisai MINGW64 /l
+$ cd Adhi_Codes/
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes
+$ ls
+ 100days.png
+'Adhitya E Certificate.pdf'
+'Adhitya E Resume.pdf'
+ Adhitya_E_resume_v3.0.13.pdf
+ Aptitute/
+'AtCoder Contest'/
+ Blogs/
+ C/
+'C++ (Starter).txt'
+ CERTIFICATES/
+ CPP/
+'Chapter exercise Questions'/
+'Cloud Computing'/
+'Club activities'/
+'Code Outputs'/
+'Colleges info'/
+ Csharp/
+ DSA/
+'DSA using PYTHON'/
+'Data Structures and Algorithms Made Easy - Data Structure and Algorithmic Puzzles.pdf'
+'Data science lab.txt'
+ Doc1.docx
+'GenAI Platform'/
+'Git and Github'/
+'Git files'/
+'Infosys virtual Internship'/
+ Internship/
+'Internship Winter 2025.pdf'
+'Java files'/
+ Leetcode_contest/
+'ML Project'/
+'My Resume.pdf'
+'My program'/
+'Placement Prep'/
+ Placement_Proof/
+ PortFolio/
+'Python Codes'/
+ README.md
+ Resumes/
+ SJIT_full_stack_engineering_materials/
+ Skillrack/
+'TCS - Codevita'/
+'TEAM RED CODE SLM PROJECT PROPOSAL.pdf'
+ The_Anatomy_of_Problem_Solving.pdf
+ TinDog_Project_boostrap/
+ UiPath/
+ Ultimate_Java_CheatSheet.pdf
+'Vault-of-codes Internship'/
+ Vim/
+'Web Dev Projects'/
+'c# secret Recovery Phrase.txt'
+'code for resume.txt'
+ git/
+'sem 2.pdf'
+ sop.pdf
+ weird/
+'what does it take to become a microsoft.txt'
+''$'\360\237\222\273'' From College Coder to Standout Developer in the Era of AI.pdf'
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes
+$ cd Cloud\ Computing/
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing
+$ mkdir DevOps_HDP
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing
+$ cd DevOps_HDP/
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP
+$ git init
+Initialized empty Git repository in L:/Adhi_Codes/Cloud Computing/DevOps_HDP/.git/
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ vi hello.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ ls
+hello.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git add hello.txt
+warning: in the working copy of 'hello.txt', LF will be replaced by CRLF the next time Git touches it
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   hello.txt
+
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ vi demo.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ cat demo.txt
+cat: demo.txt: No such file or directory
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ ls
+hello.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ vi demo.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   hello.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        demo.txt
+
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git add .
+warning: in the working copy of 'demo.txt', LF will be replaced by CRLF the next time Git touches it
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   demo.txt
+        new file:   hello.txt
+
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git commit -m "feat: adding the txt files"
+[master (root-commit) 565df29] feat: adding the txt files
+ 2 files changed, 4 insertions(+)
+ create mode 100644 demo.txt
+ create mode 100644 hello.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'origin'
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git remote add origin "https://github.com/Adhityae-506/DevOps_Hands_On_Files"
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Adhityae-506/DevOps_Hands_On_Files'
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Adhityae-506/DevOps_Hands_On_Files'
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git branch -M main
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 346 bytes | 346.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Adhityae-506/DevOps_Hands_On_Files
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git statis
+git: 'statis' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ ^C
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/adhit/.ssh/id_ed25519):
+Enter passphrase for "/c/Users/adhit/.ssh/id_ed25519" (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/adhit/.ssh/id_ed25519
+Your public key has been saved in /c/Users/adhit/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:kgnhPGnGIoPryOxXwL/hYI2mrqahMNC3r4nqUFkKDtc adhit@Adhisai
+The key's randomart image is:
++--[ED25519 256]--+
+|    .            |
+|.  = o           |
+|* + E            |
+|oB X o o         |
+|o.= * + S        |
+|*. * * .         |
+|*++ = o          |
+|== o =           |
+|@=o o..          |
++----[SHA256]-----+
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ clip < ~/.ssh/id_ed25519.pub
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$
