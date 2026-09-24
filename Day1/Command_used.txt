@@ -1,0 +1,72 @@
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_documentation (main)
+$ history
+    1  dir
+    2  l:
+    3  cd ..
+    4  cd..
+    5  cd ..
+    6  cd ..
+    7  cd ...
+    8  cd ..
+    9  dir
+   10  l:
+   11  L :
+   12  cd c
+   13  l:
+   14  l:
+   15  df -h
+   16  cd /l
+   17  clear
+   18  cd Adhi_Codes/
+   19  ls
+   20  cd Cloud\ Computing/
+   21  mkdir DevOps_HDP
+   22  cd DevOps_HDP/
+   23  git init
+   24  vi hello.txt
+   25  ls
+   26  git add hello.txt
+   27  git status
+   28  vi demo.txt
+   29  cat demo.txt
+   30  ls
+   31  vi demo.txt
+   32  git status
+   33  git add .
+   34  git status
+   35  git commit -m "feat: adding the txt files"
+   36  git status
+   37  git push origin main
+   38  git remote add origin "https://github.com/Adhityae-506/DevOps_Hands_On_Files"
+   39  git push origin main
+   40  git push -u origin main
+   41  git branch -M main
+   42  git push -u origin main
+   43  git statis
+   44  git status
+   45  ssh-keygen
+   46  clip < ~/.ssh/id_ed25519.pub
+   47  cd ..
+   48  cd DevOps_documentation/
+   49  git init
+   50  git remote add origin https://github.com/Adhityae-506/DevOps_Documentation.git
+   51  git branch -M main
+   52  git branch -M main
+   53  git push -u origin
+   54  git push -u origin main
+   55  git branch -r
+   56  git branch -m main
+   57  git checkout branch
+   58  git branch -r
+   59  git push -u origin main
+   60  git status
+   61  git add .
+   62  git commit -m
+   63  git commit -m "Adding day1 files"
+   64  git push origin main
+   65  git add.
+   66  git add .
+   67  git commit -m "Adding day1 files"
+   68  git push orign main
+   69  git push origin main
+   70  history
