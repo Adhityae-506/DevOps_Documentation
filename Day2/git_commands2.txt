@@ -1,0 +1,384 @@
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git branch -a
+* main
+  master
+  remotes/origin/main
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/main'.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git ls
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+        lfs
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ ls
+dem1.txt  demo.txt  hello.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        dem1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        dem1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git add .
+warning: in the working copy of 'dem1.txt', LF will be replaced by CRLF the next time Git touches it
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git checkout master
+A       dem1.txt
+Switched to branch 'master'
+Your branch is up to date with 'origin/main'.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   dem1.txt
+
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git commit -m "file added"
+[master f5e2507] file added
+ 1 file changed, 3 insertions(+)
+ create mode 100644 dem1.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git push origin main
+Everything up-to-date
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ ls
+demo.txt  hello.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ ls
+dem1.txt  demo.txt  hello.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git merge master
+Updating 565df29..f5e2507
+Fast-forward
+ dem1.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 dem1.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ ls
+dem1.txt  demo.txt  hello.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git log
+commit f5e2507e63c870ca9968f7ed10d66109812d47d3 (HEAD -> main, master)
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Fri Sep 25 09:49:14 2026 +0530
+
+    file added
+
+commit 565df297c6267046a8687857156d8df75a8ac55b (origin/main)
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Thu Sep 24 13:45:04 2026 +0530
+
+    feat: adding the txt files
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git log
+commit f5e2507e63c870ca9968f7ed10d66109812d47d3 (HEAD -> master, main)
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Fri Sep 25 09:49:14 2026 +0530
+
+    file added
+
+commit 565df297c6267046a8687857156d8df75a8ac55b (origin/main)
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Thu Sep 24 13:45:04 2026 +0530
+
+    feat: adding the txt files
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git rebase
+Current branch master is up to date.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git rebase
+Current branch main is up to date.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git merger master
+git: 'merger' is not a git command. See 'git --help'.
+
+The most similar command is
+        merge
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git merge master
+Already up to date.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git checkout main
+Already on 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git merge main
+Already up to date.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ vi rebase.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ ls
+dem1.txt  demo.txt  hello.txt  rebase.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git add .
+warning: in the working copy of 'rebase.txt', LF will be replaced by CRLF the next time Git touches it
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git commit -m "rebase commit"
+[master dfe4949] rebase commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 rebase.txt
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 313 bytes | 313.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Adhityae-506/DevOps_Hands_On_Files
+   565df29..f5e2507  main -> main
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git log
+commit dfe494936fb0580de49c89ecc1ac0e1025103fbe (HEAD -> master)
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Fri Sep 25 10:43:51 2026 +0530
+
+    rebase commit
+
+commit f5e2507e63c870ca9968f7ed10d66109812d47d3 (origin/main, main)
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Fri Sep 25 09:49:14 2026 +0530
+
+    file added
+
+commit 565df297c6267046a8687857156d8df75a8ac55b
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Thu Sep 24 13:45:04 2026 +0530
+
+    feat: adding the txt files
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git log
+commit f5e2507e63c870ca9968f7ed10d66109812d47d3 (HEAD -> main, origin/main)
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Fri Sep 25 09:49:14 2026 +0530
+
+    file added
+
+commit 565df297c6267046a8687857156d8df75a8ac55b
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Thu Sep 24 13:45:04 2026 +0530
+
+    feat: adding the txt files
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git rebase
+Current branch main is up to date.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git rebase master
+Successfully rebased and updated refs/heads/main.
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git log
+commit dfe494936fb0580de49c89ecc1ac0e1025103fbe (HEAD -> main, master)
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Fri Sep 25 10:43:51 2026 +0530
+
+    rebase commit
+
+commit f5e2507e63c870ca9968f7ed10d66109812d47d3 (origin/main)
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Fri Sep 25 09:49:14 2026 +0530
+
+    file added
+
+commit 565df297c6267046a8687857156d8df75a8ac55b
+Author: Adhityae-506 <adhityaelangovan2006@gmail.com>
+Date:   Thu Sep 24 13:45:04 2026 +0530
+
+    feat: adding the txt files
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ vi stashtest
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ ls
+dem1.txt  demo.txt  hello.txt  rebase.txt  stashtest
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git stash stashtest
+fatal: subcommand wasn't specified; 'push' can't be assumed due to unexpected token 'stashtest'
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        stashtest
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git add stashtest
+warning: in the working copy of 'stashtest', LF will be replaced by CRLF the next time Git touches it
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git stash stashtest
+fatal: subcommand wasn't specified; 'push' can't be assumed due to unexpected token 'stashtest'
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git stash
+Saved working directory and index state WIP on main: dfe4949 rebase commit
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (main)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ git stash pop
+On branch master
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   stashtest
+
+Dropped refs/stash@{0} (51fd32b1f856d63570fedb2ba627c2c9787b6b15)
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$ ls
+dem1.txt  demo.txt  hello.txt  rebase.txt  stashtest
+
+adhit@Adhisai MINGW64 /l/Adhi_Codes/Cloud Computing/DevOps_HDP (master)
+$

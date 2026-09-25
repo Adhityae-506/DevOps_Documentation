@@ -1,0 +1,249 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\adhit> docker -v
+Docker version 29.2.1, build a5c7197
+PS C:\Users\adhit> docker search node.js
+NAME                     DESCRIPTION                                     STARS     OFFICIAL
+harkanasien/node.js      docker run -v `pwd`:/app  -ti harkanasien/no…   0
+pomeo/node.js            Node.js                                         0
+devakumary/node.js       DockerImg                                       0
+xgqfrms/node.js          node.js for docker!                             1
+nano/node.js                                                             11
+vchinchambekar/node.js   node.js image - "hello world"                   0
+lisuo/node.js            node.js socket.io                               0
+euhariharan/node.js      Deploy node.js application                      0
+patrckbrs/node.js        Container Node.JS 4.5 based on Hypriot/Node.…   0
+binsix/node.js           build image node.js 8.1.2                       0
+abortu/node.js           Node.JS                                         0
+greatbsky/node.js        docker images of node.js base on centos7        0
+bwits/node.js                                                            0
+raedbari/node.js                                                         0
+dockernano/node.js                                                       0
+vlbitb/node.js                                                           0
+aooj/node.js                                                             0
+dscho/node.js                                                            0
+dzhang/node.js           show hostname of the container                  0
+duzh/node.js             node.js-image                                   0
+lslubanco/node.js                                                        0
+9870128971/node.js                                                       0
+9716/node.js                                                             0
+jpixel/node.js                                                           0
+uzzama/node.js                                                           0
+PS C:\Users\adhit> docker search node
+NAME               DESCRIPTION                                     STARS     OFFICIAL
+node               Node.js is a JavaScript-based platform for s…   14203     [OK]
+cimg/node          The CircleCI Node.js Docker Convenience Imag…   27
+circleci/node      Node.js is a JavaScript-based platform for s…   136
+kindest/node       https://sigs.k8s.io/kind node image             119
+okteto/node                                                        2
+sitespeedio/node   Node base template                              3
+eclipse/node       Node 0.12.9                                     1
+activestate/node   ActiveState's customizable, low-to-no vulner…   12
+cleanstart/node    Deploy, scale, and secure critical infrastru…   0
+corpusops/node     https://github.com/corpusops/docker-images/     0
+setupphp/node      Docker images to run setup-php GitHub Action    0
+rootpublic/node                                                    0
+vmware/node        Node.js base built on top of Photon OS          0
+joxit/node         Slim node docker with some utils for dev        1
+treehouses/node                                                    2
+systemsdk/node     Docker environment with node 16 for Laravel/…   0
+alpine/node                                                        5
+wayofdev/node                                                      0
+vulhub/node                                                        0
+openeuler/node                                                     0
+openizr/node       Safer, non-root, nodeJS environment             0
+gentkit/node       A Docker image for the Node.js environment .    0
+presearch/node     Run a search node in Presearch's decentraliz…   27
+iron/node          Tiny Node image                                 28
+bitnami/node       Bitnami Secure Image for node                   83
+PS C:\Users\adhit> docker image
+Usage:  docker image COMMAND
+
+Manage images
+
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Run 'docker image COMMAND --help' for more information on a command.
+PS C:\Users\adhit> docker images
+                                                                                                                                        i Info →   U  In Use
+IMAGE                     ID             DISK USAGE   CONTENT SIZE   EXTRA
+postgres:16               71e27bf60b70        641MB          166MB    U
+postgres:16-alpine        721873c34ceb        420MB          117MB
+todoapp-backend:latest    3746c61d289d       2.01GB          481MB    U
+todoapp-frontend:latest   d9d1326aee9a       2.28GB          550MB    U
+PS C:\Users\adhit> docker images
+                                                                                                                                        i Info →   U  In Use
+IMAGE                     ID             DISK USAGE   CONTENT SIZE   EXTRA
+postgres:16               71e27bf60b70        641MB          166MB    U
+postgres:16-alpine        721873c34ceb        420MB          117MB
+todoapp-backend:latest    3746c61d289d       2.01GB          481MB    U
+todoapp-frontend:latest   d9d1326aee9a       2.28GB          550MB    U
+PS C:\Users\adhit> docker search httpd
+NAME                     DESCRIPTION                                     STARS     OFFICIAL
+httpd                    The Apache HTTP Server Project                  4932      [OK]
+manageiq/httpd           Container with httpd, built on CentOS for Ma…   1
+paketobuildpacks/httpd                                                   0
+vulhub/httpd                                                             0
+openeuler/httpd                                                          0
+dockerpinata/httpd                                                       1
+centos/httpd                                                             36
+jokerjack/httpd          base image:  buxybox, running httpd server, …   0
+manasip/httpd                                                            0
+e2eteam/httpd                                                            0
+6sycho/httpd             busybox httpd /docker run --name -d mageedu/…   0
+litaotaodocker/httpd     busybox httpd docker run -name NAME -d litao…   0
+ohcoder/httpd            busybox httpd  docker run --name NAME -d ohc…   0
+liubaoyu/httpd           busybox httpd     docker run --name NAME -d …   0
+muda/httpd               busybox httpd   docker run --name NAME -d ma…   0
+dockerptu/httpd          busybox httpd     'docker run --name NAME -d…   0
+puyanhong/httpd          busybox httpd ,  docker run --name NAME -d p…   0
+wanliduxing/httpd        busybox httpd  docker run --name NAME -d  ma…   0
+ghtl/httpd               busybox httpd  docker run --name NAME -d ght…   0
+lolhens/httpd            Apache httpd 2 Server                           2
+vishakkv/httpd           spinup httpd in centos 7                        0
+amd64/httpd              The Apache HTTP Server Project                  1
+tangxj/httpd             busybox-httpd,you should use this command: d…   0
+went2675/httpd           docker --name NAME -d went2675/httpd            0
+futdryt/httpd                                                            0
+PS C:\Users\adhit> git pull httpd
+fatal: not a git repository (or any of the parent directories): .git
+PS C:\Users\adhit> docker pull httpd
+Using default tag: latest
+latest: Pulling from library/httpd
+2f4636dca226: Pull complete
+7a3bdd751d95: Pull complete
+6db0cf540580: Pull complete
+4f4fb700ef54: Pull complete
+6b37362b3da7: Pull complete
+1320c4426edf: Pull complete
+fdff2e4882b0: Download complete
+0b4153e35dab: Download complete
+Digest: sha256:03f858efb82c25cb0f9962946615cdcdaf26927cb971722149b563197cfd0fdd
+Status: Downloaded newer image for httpd:latest
+docker.io/library/httpd:latest
+PS C:\Users\adhit> docker images
+                                                                                                                                        i Info →   U  In Use
+IMAGE                     ID             DISK USAGE   CONTENT SIZE   EXTRA
+httpd:latest              03f858efb82c        177MB         47.6MB
+postgres:16               71e27bf60b70        641MB          166MB    U
+postgres:16-alpine        721873c34ceb        420MB          117MB
+todoapp-backend:latest    3746c61d289d       2.01GB          481MB    U
+todoapp-frontend:latest   d9d1326aee9a       2.28GB          550MB    U
+PS C:\Users\adhit> history
+
+  Id CommandLine
+  -- -----------
+   1 docker -v
+   2 docker search node.js
+   3 docker search node
+   4 docker image
+   5 docker images
+   6 docker images
+   7 docker search httpd
+   8 git pull httpd
+   9 docker pull httpd
+  10 docker images
+
+
+PS C:\Users\adhit> docker create httpd
+8ec6f8e0c7119fd4427d9e70ab487e53df71b2ab158aad3f13a1b352d5257f0a
+PS C:\Users\adhit> docker ps -a
+CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS                      PORTS                    NAMES
+8ec6f8e0c711   httpd              "httpd-foreground"       5 seconds ago   Created                                              loving_mendeleev
+b1157b7b10d1   todoapp-frontend   "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                            todos_frontend
+d9c62f2d808d   todoapp-backend    "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                            todo_backend
+bb9d8fee2f03   postgres:16        "docker-entrypoint.s…"   4 months ago    Up 35 minutes (Paused)      0.0.0.0:5432->5432/tcp   todos_postgres
+PS C:\Users\adhit> docker start httpd
+Error response from daemon: No such container: httpd
+failed to start containers: httpd
+PS C:\Users\adhit> docker start loving_mendeleev
+loving_mendeleev
+PS C:\Users\adhit> docker ps -a
+CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS                      PORTS                    NAMES
+8ec6f8e0c711   httpd              "httpd-foreground"       2 minutes ago   Up 4 seconds                80/tcp                   loving_mendeleev
+b1157b7b10d1   todoapp-frontend   "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                            todos_frontend
+d9c62f2d808d   todoapp-backend    "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                            todo_backend
+bb9d8fee2f03   postgres:16        "docker-entrypoint.s…"   4 months ago    Up 37 minutes (Paused)      0.0.0.0:5432->5432/tcp   todos_postgres
+PS C:\Users\adhit> docker create --name apache_Server httpd
+2dc7ce521e476a40d9d001d06210726c943e87d0148d496fc869dec938fb12b2
+PS C:\Users\adhit> docker ps -a
+CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS                      PORTS                    NAMES
+2dc7ce521e47   httpd              "httpd-foreground"       8 seconds ago   Created                                              apache_Server
+8ec6f8e0c711   httpd              "httpd-foreground"       3 minutes ago   Up About a minute           80/tcp                   loving_mendeleev
+b1157b7b10d1   todoapp-frontend   "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                            todos_frontend
+d9c62f2d808d   todoapp-backend    "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                            todo_backend
+bb9d8fee2f03   postgres:16        "docker-entrypoint.s…"   4 months ago    Up 39 minutes (Paused)      0.0.0.0:5432->5432/tcp   todos_postgres
+PS C:\Users\adhit> docker start apache_Server
+apache_Server
+PS C:\Users\adhit> docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED              STATUS                   PORTS                    NAMES
+2dc7ce521e47   httpd         "httpd-foreground"       About a minute ago   Up 7 seconds             80/tcp                   apache_Server
+8ec6f8e0c711   httpd         "httpd-foreground"       4 minutes ago        Up 2 minutes             80/tcp                   loving_mendeleev
+bb9d8fee2f03   postgres:16   "docker-entrypoint.s…"   4 months ago         Up 40 minutes (Paused)   0.0.0.0:5432->5432/tcp   todos_postgres
+PS C:\Users\adhit> docker rmi 8ec6f8e0c711
+Error response from daemon: No such image: 8ec6f8e0c711:latest
+PS C:\Users\adhit> docker stop 8ec6f8e0c711
+8ec6f8e0c711
+PS C:\Users\adhit> docker ps -a
+CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS                      PORTS                    NAMES
+2dc7ce521e47   httpd              "httpd-foreground"       2 minutes ago   Up About a minute           80/tcp                   apache_Server
+8ec6f8e0c711   httpd              "httpd-foreground"       6 minutes ago   Exited (0) 4 seconds ago                             loving_mendeleev
+b1157b7b10d1   todoapp-frontend   "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                            todos_frontend
+d9c62f2d808d   todoapp-backend    "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                            todo_backend
+bb9d8fee2f03   postgres:16        "docker-entrypoint.s…"   4 months ago    Up 41 minutes (Paused)      0.0.0.0:5432->5432/tcp   todos_postgres
+PS C:\Users\adhit> docker rm 8ec6f8e0c711
+8ec6f8e0c711
+PS C:\Users\adhit> docker ps -a
+CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS                      PORTS                    NAMES
+2dc7ce521e47   httpd              "httpd-foreground"       3 minutes ago   Up 2 minutes                80/tcp                   apache_Server
+b1157b7b10d1   todoapp-frontend   "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                            todos_frontend
+d9c62f2d808d   todoapp-backend    "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                            todo_backend
+bb9d8fee2f03   postgres:16        "docker-entrypoint.s…"   4 months ago    Up 42 minutes (Paused)      0.0.0.0:5432->5432/tcp   todos_postgres
+PS C:\Users\adhit> docker rm apache_Server
+Error response from daemon: cannot remove container "apache_Server": container is running: stop the container before removing or force remove
+PS C:\Users\adhit> docker stop apache_Server
+apache_Server
+PS C:\Users\adhit> history
+
+  Id CommandLine
+  -- -----------
+   1 docker -v
+   2 docker search node.js
+   3 docker search node
+   4 docker image
+   5 docker images
+   6 docker images
+   7 docker search httpd
+   8 git pull httpd
+   9 docker pull httpd
+  10 docker images
+  11 history
+  12 docker create httpd
+  13 docker ps -a
+  14 docker start httpd
+  15 docker start loving_mendeleev
+  16 docker ps -a
+  17 docker create --name apache_Server httpd
+  18 docker ps -a
+  19 docker start apache_Server
+  20 docker ps
+  21 docker rmi 8ec6f8e0c711
+  22 docker stop 8ec6f8e0c711
+  23 docker ps -a
+  24 docker rm 8ec6f8e0c711
+  25 docker ps -a
+  26 docker rm apache_Server
+  27 docker stop apache_Server
