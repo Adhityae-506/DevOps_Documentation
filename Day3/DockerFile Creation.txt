@@ -1,0 +1,95 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\adhit> explore .
+explore : The term 'explore' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if
+a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ explore .
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (explore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\adhit> explorer .
+PS C:\Users\adhit> cd l:
+PS L:\> cd .\Adhi_Codes\
+PS L:\Adhi_Codes> cd '.\Cloud Computing\'
+PS L:\Adhi_Codes\Cloud Computing> cd .\DevOps_documentation\
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation> mkdir Day3
+
+
+    Directory: L:\Adhi_Codes\Cloud Computing\DevOps_documentation
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        28-09-2026     13:34                Day3
+
+
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation> cd .\Day3\
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day3> vi Dockerfile
+vi : The term 'vi' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:1 char:1
++ vi Dockerfile
++ ~~
+    + CategoryInfo          : ObjectNotFound: (vi:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day3> vim Dockerfile
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day3> cat .\Dockerfile
+FROM httpd:latest
+RUN apt update
+COPY index.html /usr/local/apache2/htdocs/
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day3> vim index.html
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day3> docker build -t customing:latest .
+[+] Building 5.3s (8/8) FINISHED                                                                                                       docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                                                   0.1s
+ => => transferring dockerfile: 116B                                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/httpd:latest                                                                                        0.1s
+ => [internal] load .dockerignore                                                                                                                      0.1s
+ => => transferring context: 2B                                                                                                                        0.0s
+ => [1/3] FROM docker.io/library/httpd:latest@sha256:03f858efb82c25cb0f9962946615cdcdaf26927cb971722149b563197cfd0fdd                                  0.3s
+ => => resolve docker.io/library/httpd:latest@sha256:03f858efb82c25cb0f9962946615cdcdaf26927cb971722149b563197cfd0fdd                                  0.1s
+ => [internal] load build context                                                                                                                      0.1s
+ => => transferring context: 221B                                                                                                                      0.0s
+ => [2/3] RUN apt update                                                                                                                               3.3s
+ => [3/3] COPY index.html /usr/local/apache2/htdocs/                                                                                                   0.1s
+ => exporting to image                                                                                                                                 1.2s
+ => => exporting layers                                                                                                                                0.8s
+ => => exporting manifest sha256:7faa4b64e15feb4a0dd3fb6fe00002859a915672fd9453d221cd46780e037eaa                                                      0.0s
+ => => exporting config sha256:a62782a40b6e6d565f6e38bea46d4f6a7b72d227976a6e740ce7e7ea960bea46                                                        0.0s
+ => => exporting attestation manifest sha256:ecd6485b6f492d948367d390b2d49e891b262b8a2ee51ab95b00f26f44bc3b4c                                          0.0s
+ => => exporting manifest list sha256:00d46f357716dde0585ce80a9eff48ff5f688fc3a777df2d2d2b41f0d95028af                                                 0.0s
+ => => naming to docker.io/library/customing:latest                                                                                                    0.0s
+ => => unpacking to docker.io/library/customing:latest                                                                                                 0.2s
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day3> docker ps -a
+CONTAINER ID   IMAGE              COMMAND                  CREATED        STATUS                      PORTS                NAMES
+20e22ed08e71   httpd              "httpd-foreground"       3 hours ago    Exited (255) 2 hours ago    0.0.0.0:81->80/tcp   apache_webserver
+b1157b7b10d1   todoapp-frontend   "docker-entrypoint.s…"   4 months ago   Exited (137) 4 months ago                        todos_frontend
+d9c62f2d808d   todoapp-backend    "docker-entrypoint.s…"   4 months ago   Exited (137) 4 months ago                        todo_backend
+bb9d8fee2f03   postgres:16        "docker-entrypoint.s…"   4 months ago   Exited (0) 2 hours ago                           todos_postgres
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day3> docker run -d --name filetest -p 8081:80 customing
+a0b5f37207113e022e609c2b117c78f3da96f92abbba12e8eecd364fcdd29a21
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day3> docker ps
+CONTAINER ID   IMAGE       COMMAND              CREATED         STATUS         PORTS                                     NAMES
+a0b5f3720711   customing   "httpd-foreground"   5 seconds ago   Up 4 seconds   0.0.0.0:8081->80/tcp, [::]:8081->80/tcp   filetest
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day3> docker exec -it filetest /bin/bash
+root@a0b5f3720711:/usr/local/apache2# ls
+bin  build  cgi-bin  conf  error  htdocs  icons  include  logs  modules
+root@a0b5f3720711:/usr/local/apache2# cd htdocs/
+root@a0b5f3720711:/usr/local/apache2/htdocs# cat index.html
+<!DOCTYPE html>
+<html>
+        <head>
+                    <title>Test Page</title>
+        </head>
+        <body>
+                    <h1>Apache is Working!</h1>
+                        <p>Hello from my Ubuntu VM.</p>
+        </body>
+</html>
+root@a0b5f3720711:/usr/local/apache2/htdocs# docker ps -a
+bash: docker: command not found
+root@a0b5f3720711:/usr/local/apache2/htdocs# exit
+exit
