@@ -1,0 +1,333 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\adhit> docker network ls
+NETWORK ID     NAME              DRIVER    SCOPE
+031235c18cb1   bridge            bridge    local
+d492cc977764   host              host      local
+d87e0e159bc9   none              null      local
+42e11a30a08d   todoapp_default   bridge    local
+PS C:\Users\adhit> docker network create httpd_network
+f9dbdf17c03812d6d8e084da20098767ec98b6b0e8b596ab49040ce326aa6fa5
+PS C:\Users\adhit> docker network ls
+NETWORK ID     NAME              DRIVER    SCOPE
+031235c18cb1   bridge            bridge    local
+d492cc977764   host              host      local
+f9dbdf17c038   httpd_network     bridge    local
+d87e0e159bc9   none              null      local
+42e11a30a08d   todoapp_default   bridge    local
+PS C:\Users\adhit> docker system prune
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - unused build cache
+
+Are you sure you want to continue? [y/N] n
+PS C:\Users\adhit> docker system prune -a
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all images without at least one container associated to them
+  - all build cache
+
+Are you sure you want to continue? [y/N] n
+PS C:\Users\adhit> docker run -d --name httpd1 -p 9090:80 --network=httpd_network httpd
+57d0100643a4a8a8ef3fd468ffec4772de001bb3c3fd4accb1974d6b36ca1f64
+PS C:\Users\adhit> docker ps -a
+CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS                        PORTS                                         NAMES
+57d0100643a4   httpd              "httpd-foreground"       5 seconds ago   Up 4 seconds                  0.0.0.0:9090->80/tcp, [::]:9090->80/tcp       httpd1
+a0b5f3720711   customing          "httpd-foreground"       18 hours ago    Exited (255) 16 minutes ago   0.0.0.0:8081->80/tcp                          filetest
+20e22ed08e71   httpd              "httpd-foreground"       22 hours ago    Exited (255) 16 minutes ago   0.0.0.0:81->80/tcp                            apache_webserver
+b1157b7b10d1   todoapp-frontend   "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                                                   todos_frontend
+d9c62f2d808d   todoapp-backend    "docker-entrypoint.s…"   4 months ago    Exited (137) 4 months ago                                                   todo_backend
+bb9d8fee2f03   postgres:16        "docker-entrypoint.s…"   4 months ago    Up 16 minutes                 0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   todos_postgres
+PS C:\Users\adhit> docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+57d0100643a4   httpd         "httpd-foreground"       10 seconds ago   Up 9 seconds    0.0.0.0:9090->80/tcp, [::]:9090->80/tcp       httpd1
+bb9d8fee2f03   postgres:16   "docker-entrypoint.s…"   4 months ago     Up 16 minutes   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   todos_postgres
+PS C:\Users\adhit> docker stop bb9d8fee2f03
+bb9d8fee2f03
+PS C:\Users\adhit> docker ps
+CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                     NAMES
+57d0100643a4   httpd     "httpd-foreground"   44 seconds ago   Up 43 seconds   0.0.0.0:9090->80/tcp, [::]:9090->80/tcp   httpd1
+PS C:\Users\adhit> docker inspect httpd1
+[
+    {
+        "Id": "57d0100643a4a8a8ef3fd468ffec4772de001bb3c3fd4accb1974d6b36ca1f64",
+        "Created": "2026-09-29T03:25:34.810700991Z",
+        "Path": "httpd-foreground",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 614,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-29T03:25:34.981467631Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:03f858efb82c25cb0f9962946615cdcdaf26927cb971722149b563197cfd0fdd",
+        "ResolvConfPath": "/var/lib/docker/containers/57d0100643a4a8a8ef3fd468ffec4772de001bb3c3fd4accb1974d6b36ca1f64/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/57d0100643a4a8a8ef3fd468ffec4772de001bb3c3fd4accb1974d6b36ca1f64/hostname",
+        "HostsPath": "/var/lib/docker/containers/57d0100643a4a8a8ef3fd468ffec4772de001bb3c3fd4accb1974d6b36ca1f64/hosts",
+        "LogPath": "/var/lib/docker/containers/57d0100643a4a8a8ef3fd468ffec4772de001bb3c3fd4accb1974d6b36ca1f64/57d0100643a4a8a8ef3fd468ffec4772de001bb3c3fd4accb1974d6b36ca1f64-json.log",
+        "Name": "/httpd1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "httpd_network",
+            "PortBindings": {
+                "80/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "9090"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                41,
+                156
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "57d0100643a4",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/apache2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "HTTPD_PREFIX=/usr/local/apache2",
+                "HTTPD_VERSION=2.4.68",
+                "HTTPD_SHA256=68c74d4df38c26bed4dfbdb8f3baf1eb532f3872357becc1bba5d136f6b63c06",
+                "HTTPD_PATCHES="
+            ],
+            "Cmd": [
+                "httpd-foreground"
+            ],
+            "Image": "httpd",
+            "Volumes": null,
+            "WorkingDir": "/usr/local/apache2",
+            "Entrypoint": null,
+            "Labels": {},
+            "StopSignal": "SIGWINCH",
+            "StopTimeout": 1
+        },
+        "NetworkSettings": {
+            "SandboxID": "c80e0c79f9032ca741c3f08f56e5abbdacffb22aaa8f28787bf5f065e533fe7d",
+            "SandboxKey": "/var/run/docker/netns/c80e0c79f903",
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "9090"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "9090"
+                    }
+                ]
+            },
+            "Networks": {
+                "httpd_network": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "f9dbdf17c03812d6d8e084da20098767ec98b6b0e8b596ab49040ce326aa6fa5",
+                    "EndpointID": "959cf249ae07f86f95d48c169e553aa9b441ae949d8bb7b39af2cb624072ca3f",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.2",
+                    "MacAddress": "1a:22:42:60:bb:e5",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "httpd1",
+                        "57d0100643a4"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:3a1e0bbe28c4673a03b7a3fbc71a56325eacb1a8d11c1ad696fbf9678f07febd",
+            "size": 2093,
+            "annotations": {
+                "com.docker.official-images.bashbrew.arch": "amd64",
+                "org.opencontainers.image.base.digest": "sha256:7792b1f7702a86946cd518db72b6a407302c3e9bc1635634368b878189e8221c",
+                "org.opencontainers.image.base.name": "debian:trixie-slim",
+                "org.opencontainers.image.created": "2026-09-19T00:18:23Z",
+                "org.opencontainers.image.revision": "4da43810a4429c552e19c43f8e513248c34cfc84",
+                "org.opencontainers.image.source": "https://github.com/docker-library/httpd.git#4da43810a4429c552e19c43f8e513248c34cfc84:2.4",
+                "org.opencontainers.image.url": "https://hub.docker.com/_/httpd",
+                "org.opencontainers.image.version": "2.4.68"
+            },
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+PS C:\Users\adhit> docker network inspect bridge
+[
+    {
+        "Name": "bridge",
+        "Id": "031235c18cb15a23dcd10adddb9d37dbaf2790d6412b8bce211ff3af436cd85e",
+        "Created": "2026-09-29T03:09:11.52036783Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.17.0.0/16",
+                    "Gateway": "172.17.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.bridge.default_bridge": "true",
+            "com.docker.network.bridge.enable_icc": "true",
+            "com.docker.network.bridge.enable_ip_masquerade": "true",
+            "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+            "com.docker.network.bridge.name": "docker0",
+            "com.docker.network.driver.mtu": "1500"
+        },
+        "Labels": {},
+        "Containers": {},
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.17.0.0/16": {
+                        "IPsInUse": 3,
+                        "DynamicIPsAvailable": 65533
+                    }
+                }
+            }
+        }
+    }
+]

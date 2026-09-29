@@ -1,0 +1,38 @@
+services:
+
+  frontend:
+    image: httpd:2.4
+    container_name: frontend
+    ports:
+      - "8083:80"
+    volumes:
+      - ./frontend:/usr/local/apache2/htdocs/
+    networks:
+      - app-network
+
+  backend:
+    image: php:8.2-apache
+    container_name: backend
+    ports:
+      - "8081:80"
+    networks:
+      - app-network
+
+  database:
+    image: mysql:8.0
+    container_name: database
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: myapp
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppassword
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+volumes:
+  mysql-data:
