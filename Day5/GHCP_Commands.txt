@@ -1,0 +1,51 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\adhit> docker login ghcr.io -u Adhityae-506
+Password:
+
+Login Succeeded
+PS C:\Users\adhit> docker images
+                                                                                                    i Info →   U  In Use
+IMAGE                        ID             DISK USAGE   CONTENT SIZE   EXTRA
+customing:latest             00d46f357716        213MB           62MB
+django_docker_image:latest   d6a1c1ce6259        239MB         51.6MB
+httpd:latest                 03f858efb82c        177MB         47.6MB
+jenkins-test:latest          d0c460547988        239MB         51.6MB    U
+postgres:16                  71e27bf60b70        641MB          166MB    U
+todoapp-backend:latest       3746c61d289d       2.01GB          481MB    U
+todoapp-frontend:latest      d9d1326aee9a       2.28GB          550MB    U
+PS C:\Users\adhit> docker tag jenkins-test:latest ghcr.io/Adhityae-506/jenkinstest
+error parsing reference: "ghcr.io/Adhityae-506/jenkinstest" is not a valid repository/tag: invalid reference format: repository name (Adhityae-506/jenkinstest) must be lowercase
+PS C:\Users\adhit> docker tag jenkins-test:latest ghcr.io/adhityae-506/jenkinstest
+PS C:\Users\adhit> docker images
+                                                                                                    i Info →   U  In Use
+IMAGE                                     ID             DISK USAGE   CONTENT SIZE   EXTRA
+customing:latest                          00d46f357716        213MB           62MB
+django_docker_image:latest                d6a1c1ce6259        239MB         51.6MB
+ghcr.io/adhityae-506/jenkinstest:latest   d0c460547988        239MB         51.6MB    U
+httpd:latest                              03f858efb82c        177MB         47.6MB
+jenkins-test:latest                       d0c460547988        239MB         51.6MB    U
+postgres:16                               71e27bf60b70        641MB          166MB    U
+todoapp-backend:latest                    3746c61d289d       2.01GB          481MB    U
+todoapp-frontend:latest                   d9d1326aee9a       2.28GB          550MB    U
+PS C:\Users\adhit> docker push d0c460547988
+Using default tag: latest
+The push refers to repository [docker.io/library/d0c460547988]
+tag does not exist: d0c460547988:latest
+PS C:\Users\adhit> docker push ghcr.io/Adhityae-506/jenkinstest:latest
+invalid reference format: repository name (Adhityae-506/jenkinstest) must be lowercase
+PS C:\Users\adhit> docker push ghcr.io/adhityae-506/jenkinstest:latest
+The push refers to repository [ghcr.io/adhityae-506/jenkinstest]
+d18fa88ca5e7: Pushed
+44136fa355b3: Pushed
+3764a9a7d1e8: Pushed
+6b37362b3da7: Pushed
+b0dc7f87bef1: Pushed
+06ad939ed42b: Pushed
+91565ba813e4: Pushed
+fb6f9befb2b7: Pushed
+e035cda77f0d: Pushed
+aa5ece973825: Pushed
+latest: digest: sha256:d0c46054798840bd826f8bd4c3db72fd1d4370422be951ab56ec3b419b09c052 size: 856
+PS C:\Users\adhit>

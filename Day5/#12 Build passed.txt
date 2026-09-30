@@ -1,0 +1,121 @@
+Started by user Adhitya E
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github
+The recommended git tool is: NONE
+using credential Adhitya's Github
+ > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/Adhityae-506/django_docker_project # timeout=10
+Fetching upstream changes from https://github.com/Adhityae-506/django_docker_project
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.51.0.windows.1'
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --tags --force --progress -- https://github.com/Adhityae-506/django_docker_project +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/main^{commit}" # timeout=10
+Checking out Revision 3912a45c82b3cdbfc5ff659d55fed18d682ca1c4 (refs/remotes/origin/main)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 3912a45c82b3cdbfc5ff659d55fed18d682ca1c4 # timeout=10
+Commit message: "chore: django_project_added"
+ > git.exe rev-list --no-walk 3912a45c82b3cdbfc5ff659d55fed18d682ca1c4 # timeout=10
+[Demo Integration github] $ cmd /c call C:\WINDOWS\TEMP\jenkins7369429049209455010.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>dir
+ Volume in drive C is Windows
+ Volume Serial Number is EA37-06AE
+
+ Directory of C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github
+
+30-09-2026  11:03    <DIR>          .
+30-09-2026  11:02    <DIR>          ..
+30-09-2026  11:03    <DIR>          api
+30-09-2026  11:03    <DIR>          config
+30-09-2026  11:03               470 Dockerfile
+30-09-2026  11:03               684 manage.py
+30-09-2026  11:03                18 requirements.txt
+               3 File(s)          1,172 bytes
+               4 Dir(s)  29,853,741,056 bytes free
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>exit 0 
+[Demo Integration github] $ cmd /c call C:\WINDOWS\TEMP\jenkins4508560067953335448.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>docker build -t jenkins-test . 
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 509B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 1.8s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 ...
+
+#5 [1/5] FROM docker.io/library/python:3.12-slim@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f
+#5 resolve docker.io/library/python:3.12-slim@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f 0.1s done
+#5 DONE 0.1s
+
+#4 [internal] load build context
+#4 transferring context: 44.48kB 0.3s done
+#4 DONE 0.3s
+
+#6 [2/5] WORKDIR /app
+#6 CACHED
+
+#7 [3/5] COPY requirements.txt .
+#7 DONE 0.1s
+
+#8 [4/5] RUN pip install --no-cache-dir -r requirements.txt
+#8 1.707 Collecting Django<6.0,>=5.2 (from -r requirements.txt (line 1))
+#8 2.025   Downloading django-5.2.17-py3-none-any.whl.metadata (4.1 kB)
+#8 2.068 Collecting asgiref>=3.8.1 (from Django<6.0,>=5.2->-r requirements.txt (line 1))
+#8 2.082   Downloading asgiref-3.12.1-py3-none-any.whl.metadata (9.4 kB)
+#8 2.133 Collecting sqlparse>=0.3.1 (from Django<6.0,>=5.2->-r requirements.txt (line 1))
+#8 2.162   Downloading sqlparse-0.6.0-py3-none-any.whl.metadata (6.0 kB)
+#8 2.198 Downloading django-5.2.17-py3-none-any.whl (8.3 MB)
+#8 2.704    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 18.7 MB/s eta 0:00:00
+#8 2.828 Downloading asgiref-3.12.1-py3-none-any.whl (25 kB)
+#8 2.864 Downloading sqlparse-0.6.0-py3-none-any.whl (50 kB)
+#8 2.919 Installing collected packages: sqlparse, asgiref, Django
+#8 4.568 Successfully installed Django-5.2.17 asgiref-3.12.1 sqlparse-0.6.0
+#8 4.569 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#8 4.755 
+#8 4.755 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#8 4.755 [notice] To update, run: pip install --upgrade pip
+#8 DONE 5.0s
+
+#9 [5/5] COPY . .
+#9 DONE 0.1s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 1.0s done
+#10 exporting manifest sha256:c5094c4809c30a380331c61d0d8c1f8a17a02df9b5fb3369386628c81b5529c3 0.0s done
+#10 exporting config sha256:0e6546ca5351022546a26094c905ceab2e79b9fc45720eb689f1da86a1088153 0.0s done
+#10 exporting attestation manifest sha256:c48aab17189ca92d7c56199fd338d939260e916625ff360668f62b597a4deb95 0.0s done
+#10 exporting manifest list sha256:d0c46054798840bd826f8bd4c3db72fd1d4370422be951ab56ec3b419b09c052 0.0s done
+#10 naming to docker.io/library/jenkins-test:latest
+#10 naming to docker.io/library/jenkins-test:latest done
+#10 unpacking to docker.io/library/jenkins-test:latest
+#10 unpacking to docker.io/library/jenkins-test:latest 1.1s done
+#10 DONE 2.3s
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>docker images 
+IMAGE                        ID             DISK USAGE   CONTENT SIZE   EXTRA
+customing:latest             00d46f357716        213MB           62MB        
+django_docker_image:latest   d6a1c1ce6259        239MB         51.6MB        
+httpd:latest                 03f858efb82c        177MB         47.6MB        
+jenkins-test:latest          d0c460547988        239MB         51.6MB        
+postgres:16                  71e27bf60b70        641MB          166MB   U    
+todoapp-backend:latest       3746c61d289d       2.01GB          481MB   U    
+todoapp-frontend:latest      d9d1326aee9a       2.28GB          550MB   U    
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>docker run -d --name jenkins-test-con -p 8084:80 jenkins-test 
+266b1f9cbf6e1c827e224a8bde61e719e259780c86a03e3007b0f07f233e56b9
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>exit 0 
+Finished: SUCCESS

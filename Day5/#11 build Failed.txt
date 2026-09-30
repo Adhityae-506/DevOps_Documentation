@@ -1,0 +1,52 @@
+Started by user Adhitya E
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github
+The recommended git tool is: NONE
+using credential Adhitya's Github
+ > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/Adhityae-506/django_docker_project # timeout=10
+Fetching upstream changes from https://github.com/Adhityae-506/django_docker_project
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.51.0.windows.1'
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --tags --force --progress -- https://github.com/Adhityae-506/django_docker_project +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/main^{commit}" # timeout=10
+Checking out Revision 3912a45c82b3cdbfc5ff659d55fed18d682ca1c4 (refs/remotes/origin/main)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 3912a45c82b3cdbfc5ff659d55fed18d682ca1c4 # timeout=10
+Commit message: "chore: django_project_added"
+ > git.exe rev-list --no-walk 3912a45c82b3cdbfc5ff659d55fed18d682ca1c4 # timeout=10
+[Demo Integration github] $ cmd /c call C:\WINDOWS\TEMP\jenkins8470795905750625362.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>dir
+ Volume in drive C is Windows
+ Volume Serial Number is EA37-06AE
+
+ Directory of C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github
+
+30-09-2026  11:03    <DIR>          .
+30-09-2026  11:02    <DIR>          ..
+30-09-2026  11:03    <DIR>          api
+30-09-2026  11:03    <DIR>          config
+30-09-2026  11:03               470 Dockerfile
+30-09-2026  11:03               684 manage.py
+30-09-2026  11:03                18 requirements.txt
+               3 File(s)          1,172 bytes
+               4 Dir(s)  29,890,158,592 bytes free
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>exit 0 
+[Demo Integration github] $ cmd /c call C:\WINDOWS\TEMP\jenkins7093512656538558715.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>docker build -t jenkins-test . 
+ERROR: failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>docker images 
+failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>docker run -d --name jenkins-test-con -p 8084:80 jenkins-test 
+failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Demo Integration github>exit 1 
+Build step 'Execute Windows batch command' marked build as failure
+Finished: FAILURE
