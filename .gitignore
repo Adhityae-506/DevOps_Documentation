@@ -1,15 +1,21 @@
 # Terraform
 **/.terraform/
+
+# Terraform state files
 *.tfstate
 *.tfstate.*
 *.tfvars
 *.tfvars.json
+
+# Terraform crash logs
 crash.log
 crash.*.log
+
+# Terraform override files
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
 
-# Terraform lock file
-# Keep .terraform.lock.hcl committed
+# Keep Terraform dependency lock files
+!.terraform.lock.hcl
