@@ -1,0 +1,85 @@
+docker build -t adhitya-portfolio .
+[+] Building 6.9s (8/8) FINISHED                                                                                                                    docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                                                                0.1s
+ => => transferring dockerfile: 135B                                                                                                                                0.0s
+ => [internal] load metadata for docker.io/library/nginx:alpine                                                                                                     2.7s
+ => [auth] library/nginx:pull token for registry-1.docker.io                                                                                                        0.0s
+ => [internal] load .dockerignore                                                                                                                                   0.0s
+ => => transferring context: 103B                                                                                                                                   0.0s
+ => [internal] load build context                                                                                                                                   1.8s
+ => => transferring context: 27.59MB                                                                                                                                1.8s
+ => [1/2] FROM docker.io/library/nginx:alpine@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2                                               2.6s
+ => => resolve docker.io/library/nginx:alpine@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2                                               0.0s
+ => => sha256:e72112c14215406dc7f23ef8e5cfdfddeb8662176167382ad64ec86f52b7a88e 20.53MB / 20.53MB                                                                    1.8s
+ => => sha256:e76228b47809e8a4bd37a6ba52a04d282d8c72ddf0ff9e8b83fd6318631abd52 1.40kB / 1.40kB                                                                      0.5s
+ => => sha256:64c8194480fee2c03e01cc561cf5542733627d2c7de493a028139677025f975c 1.21kB / 1.21kB                                                                      0.7s
+ => => sha256:9a9a644fdd6a3681d43dace44c8cfef374cfd7b24f433113379ea483692498a8 404B / 404B                                                                          0.8s
+ => => sha256:745dfb2690dd8627e1593941caccc756f14943df7930a478beb4e808c5695cb9 965B / 965B                                                                          0.3s
+ => => sha256:6c53d0b2a666ed8f8fad8d9982e30cf24eb085036c17b27591665ca25e1ba40c 629B / 629B                                                                          0.3s
+ => => sha256:d9aae54b58315e84b9c3ac5f00bad6610e0e28ad9ff28fcde694647e0be13131 1.93MB / 1.93MB                                                                      0.5s
+ => => sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5 3.85MB / 3.85MB                                                                      0.7s
+ => => extracting sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5                                                                           0.2s
+ => => extracting sha256:d9aae54b58315e84b9c3ac5f00bad6610e0e28ad9ff28fcde694647e0be13131                                                                           0.1s
+ => => extracting sha256:6c53d0b2a666ed8f8fad8d9982e30cf24eb085036c17b27591665ca25e1ba40c                                                                           0.0s
+ => => extracting sha256:745dfb2690dd8627e1593941caccc756f14943df7930a478beb4e808c5695cb9                                                                           0.0s
+ => => extracting sha256:9a9a644fdd6a3681d43dace44c8cfef374cfd7b24f433113379ea483692498a8                                                                           0.0s
+ => => extracting sha256:64c8194480fee2c03e01cc561cf5542733627d2c7de493a028139677025f975c                                                                           0.0s
+ => => extracting sha256:e76228b47809e8a4bd37a6ba52a04d282d8c72ddf0ff9e8b83fd6318631abd52                                                                           0.0s
+ => => extracting sha256:e72112c14215406dc7f23ef8e5cfdfddeb8662176167382ad64ec86f52b7a88e                                                                           0.4s
+ => [2/2] COPY . /usr/share/nginx/html                                                                                                                              0.2s
+ => exporting to image                                                                                                                                              1.1s
+ => => exporting layers                                                                                                                                             0.8s
+ => => exporting manifest sha256:d52bd76e30dadd083963b3b4a347179e55a974f0b63d527d9d61158ff9fef38a                                                                   0.0s
+ => => exporting config sha256:d29984e6b894a05ad7ca2170a85f396d9b372144cb63982aeddad62a37a779b6                                                                     0.0s
+ => => exporting attestation manifest sha256:9392305b211fbee432b858931905ab259f080b4a5a9a6b5c3ebff6e2a7602325                                                       0.0s
+ => => exporting manifest list sha256:d09cc66d3244c9ddf8ace7e034dd2abeeaa983bd8a234bffc770e54b25e80d32                                                              0.0s
+ => => naming to docker.io/library/adhitya-portfolio:latest                                                                                                         0.0s
+ => => unpacking to docker.io/library/adhitya-portfolio:latest                                                                                                      0.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/nz3egmqkcprzvugeke3wyyz3v
+PS L:\Code\aws s3 deployment> docker images
+                                                                                                                                                     i Info →   U  In Use
+IMAGE                                     ID             DISK USAGE   CONTENT SIZE   EXTRA
+adhitya-portfolio:latest                  d09cc66d3244        148MB         53.3MB        
+customing:latest                          00d46f357716        213MB           62MB        
+django_docker_image:latest                d6a1c1ce6259        239MB         51.6MB        
+ghcr.io/adhityae-506/jenkinstest:latest   d0c460547988        239MB         51.6MB    U   
+httpd:latest                              03f858efb82c        177MB         47.6MB        
+jenkins-test:latest                       d0c460547988        239MB         51.6MB    U   
+postgres:16                               71e27bf60b70        641MB          166MB    U   
+todoapp-backend:latest                    3746c61d289d       2.01GB          481MB    U   
+todoapp-frontend:latest                   d9d1326aee9a       2.28GB          550MB    U   
+PS L:\Code\aws s3 deployment> docker run -d -p 8081:80 --name portfolio adhitya-portfolio
+48dd467862f0dde4b149c7249c8b1153b19f27e0a0be14bd94f2f943aa006835
+PS L:\Code\aws s3 deployment> docker ps
+CONTAINER ID   IMAGE               COMMAND                  CREATED         STATUS              PORTS                                         NAMES
+48dd467862f0   adhitya-portfolio   "/docker-entrypoint.…"   7 seconds ago   Up 5 seconds        0.0.0.0:8081->80/tcp, [::]:8081->80/tcp       portfolio
+bb9d8fee2f03   postgres:16         "docker-entrypoint.s…"   4 months ago    Up About a minute   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   todos_postgres
+PS L:\Code\aws s3 deployment> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .dockerignore
+        Dockerfile
+        Jenkinsfile
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS L:\Code\aws s3 deployment> git add .                          
+PS L:\Code\aws s3 deployment> git commit -m "ci : add jenkins Docker pipeline"
+[main 1808f82] ci : add jenkins Docker pipeline
+ 3 files changed, 32 insertions(+)
+ create mode 100644 .dockerignore
+ create mode 100644 Dockerfile
+ create mode 100644 Jenkinsfile
+PS L:\Code\aws s3 deployment> git push origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 646 bytes | 646.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Adhityae-506/AWS-S3-Portfolio-deployment.git
+   c465ab6..1808f82  main -> main
