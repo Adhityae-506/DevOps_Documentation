@@ -1,0 +1,127 @@
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Thu Oct  8 08:35:32 2026 from 13.233.177.3
+[ec2-user@ip-172-31-5-240 ~]$ aws configure
+AWS Access Key ID [****************3KBE]: AWS Secret Access Key [****************8Hip]: Default region name [ap-south-1]: Default output format [json]: [ec2-user@ip-172-31-5-240 ~]$ ^C
+[ec2-user@ip-172-31-5-240 ~]$ sudo -i
+[root@ip-172-31-5-240 ~]# aws configure
+AWS Access Key ID [****************3KBE]: AWS Secret Access Key [****************8Hip]: Default region name [ap-south-1]: Default output format [json]: [root@ip-172-31-5-240 ~]# ^C
+[root@ip-172-31-5-240 ~]# curl -Lo kubectl https://dl.k8s.io/release/$(curl -s -L https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+100 59.01M 100 59.01M   0      0 111.8M      0                              0
+[root@ip-172-31-5-240 ~]# kubectl version
+Client Version: v1.37.1
+Kustomize Version: v5.8.1
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+[root@ip-172-31-5-240 ~]# aws eks update-kubeconfig --name demoEKS
+Added new context arn:aws:eks:ap-south-1:390402567136:cluster/demoEKS to /root/.kube/config
+[root@ip-172-31-5-240 ~]# 
+
+
+[ec2-user@ip-172-31-5-240 ~]$ kubectl run demoPods --image=httpd
+E1009 05:51:04.843595    5711 memcache.go:381] "Couldn't get current server API group list" err="Get \"https://EF904DBF65616732E3F5A38FF1A417F9.gr7.ap-south-1.eks.amazonaws.com/api?timeout=32s\": dial tcp: lookup EF904DBF65616732E3F5A38FF1A417F9.gr7.ap-south-1.eks.amazonaws.com on 172.31.0.2:53: no such host"
+Unable to connect to the server: dial tcp: lookup EF904DBF65616732E3F5A38FF1A417F9.gr7.ap-south-1.eks.amazonaws.com on 172.31.0.2:53: no such host
+[ec2-user@ip-172-31-5-240 ~]$ sudo -i
+[root@ip-172-31-5-240 ~]# aws eks update-kubeconfig --name demoEKS
+Updated context arn:aws:eks:ap-south-1:390402567136:cluster/demoEKS in /root/.kube/config
+[root@ip-172-31-5-240 ~]# kubectll run demoPods --image=httpd
+-bash: kubectll: command not found
+[root@ip-172-31-5-240 ~]# kubectl run demoPods --image=httpd
+The Pod "demoPods" is invalid: 
+* metadata.name: Invalid value: "demoPods": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')
+* spec.containers[0].name: Invalid value: "demoPods": a lowercase RFC 1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')
+[root@ip-172-31-5-240 ~]# kubectl run demopods --image=httpd
+pod/demopods created
+[root@ip-172-31-5-240 ~]# kubectl get pods
+NAME       READY   STATUS    RESTARTS   AGE
+demopods   1/1     Running   0          10s
+[root@ip-172-31-5-240 ~]# kubectl get pods -o wide
+NAME       READY   STATUS    RESTARTS   AGE   IP              NODE                                          NOMINATED NODE   READINESS GATES
+demopods   1/1     Running   0          21s   172.31.12.223   ip-172-31-2-140.ap-south-1.compute.internal   <none>           <none>
+[root@ip-172-31-5-240 ~]# kubectl create deployment apacheDeploy --image=httpd
+error: failed to create deployment: Deployment.apps "apacheDeploy" is invalid: metadata.name: Invalid value: "apacheDeploy": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')
+[root@ip-172-31-5-240 ~]# kubectl create deployment apachedeploy --image=httpd
+deployment.apps/apachedeploy created
+[root@ip-172-31-5-240 ~]# kubectl scale deployment apachedeploy --replicas=5
+deployment.apps/apachedeploy scaled
+[root@ip-172-31-5-240 ~]# kubectl get nodes
+NAME                                          STATUS   ROLES    AGE   VERSION
+ip-172-31-2-140.ap-south-1.compute.internal   Ready    <none>   96m   v1.36.4-eks-3b4a6ca
+ip-172-31-40-94.ap-south-1.compute.internal   Ready    <none>   96m   v1.36.4-eks-3b4a6ca
+[root@ip-172-31-5-240 ~]# kubectl get pods -o wide
+NAME                            READY   STATUS    RESTARTS   AGE     IP              NODE                                          NOMINATED NODE   READINESS GATES
+apachedeploy-6b47bb5dc9-2qm4r   1/1     Running   0          25s     172.31.34.163   ip-172-31-40-94.ap-south-1.compute.internal   <none>           <none>
+apachedeploy-6b47bb5dc9-866v2   1/1     Running   0          25s     172.31.34.40    ip-172-31-40-94.ap-south-1.compute.internal   <none>           <none>
+apachedeploy-6b47bb5dc9-lbpm9   1/1     Running   0          60s     172.31.3.198    ip-172-31-2-140.ap-south-1.compute.internal   <none>           <none>
+apachedeploy-6b47bb5dc9-lwmkd   1/1     Running   0          25s     172.31.12.32    ip-172-31-2-140.ap-south-1.compute.internal   <none>           <none>
+apachedeploy-6b47bb5dc9-m2f4q   1/1     Running   0          25s     172.31.7.153    ip-172-31-2-140.ap-south-1.compute.internal   <none>           <none>
+demopods                        1/1     Running   0          2m25s   172.31.12.223   ip-172-31-2-140.ap-south-1.compute.internal   <none>           <none>
+[root@ip-172-31-5-240 ~]# kubectl expose deployment apachedeploy --type=NodePort --port=80
+service/apachedeploy exposed
+[root@ip-172-31-5-240 ~]# kubectl get svc
+NAME           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+apachedeploy   NodePort    10.100.151.213   <none>        80:30981/TCP   9s
+kubernetes     ClusterIP   10.100.0.1       <none>        443/TCP        114m
+[root@ip-172-31-5-240 ~]# kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+apachedeploy-6b47bb5dc9-2qm4r   1/1     Running   0          5m55s
+apachedeploy-6b47bb5dc9-866v2   1/1     Running   0          5m55s
+apachedeploy-6b47bb5dc9-lbpm9   1/1     Running   0          6m30s
+apachedeploy-6b47bb5dc9-lwmkd   1/1     Running   0          5m55s
+apachedeploy-6b47bb5dc9-m2f4q   1/1     Running   0          5m55s
+demopods                        1/1     Running   0          7m55s
+[root@ip-172-31-5-240 ~]# kubectl exec -it apachedeploy-6b47bb5dc9-2qm4r -- /bin/bash
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2# ls
+bin  build  cgi-bin  conf  error  htdocs  icons  include  logs  modules
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2# cd htdocs
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2/htdocs# ls
+index.html
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2/htdocs# cat index.html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>It works! Apache httpd</title>
+</head>
+<body>
+<p>It works!</p>
+</body>
+</html>
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2/htdocs# rm index.html
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2/htdocs# ls
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2/htdocs# touch index.html
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2/htdocs# ls
+index.html
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2/htdocs# echo "<html><body><marquee><h1>Hey Pod_1</h1></marquee></body></html>" 
+<html><body><marquee><h1>Hey Pod_1</h1></marquee></body></html>
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2/htdocs# cat index.html
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2/htdocs# echo "<html><body><marquee><h1>Hey Pod_1</h1></marquee></body></html>" > index.html
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2/htdocs# cat index.html
+<html><body><marquee><h1>Hey Pod_1</h1></marquee></body></html>
+root@apachedeploy-6b47bb5dc9-2qm4r:/usr/local/apache2/htdocs# exit
+exit
+[root@ip-172-31-5-240 ~]# docker exec -it apachedeploy-6b47bb5dc9-m2f4q /bin/bash
+-bash: docker: command not found
+[root@ip-172-31-5-240 ~]# kubectl exec -it apachedeploy-6b47bb5dc9-m2f4q /bin/bash
+error: exec [POD] [COMMAND] is not supported anymore. Use exec [POD] -- [COMMAND] instead
+See 'kubectl exec -h' for help and examples
+[root@ip-172-31-5-240 ~]# kubectl exec -it apachedeploy-6b47bb5dc9-m2f4q -- /bin/bash
+root@apachedeploy-6b47bb5dc9-m2f4q:/usr/local/apache2# ls
+bin  build  cgi-bin  conf  error  htdocs  icons  include  logs  modules
+root@apachedeploy-6b47bb5dc9-m2f4q:/usr/local/apache2# cd htdocs
+root@apachedeploy-6b47bb5dc9-m2f4q:/usr/local/apache2/htdocs# rm index.html 
+root@apachedeploy-6b47bb5dc9-m2f4q:/usr/local/apache2/htdocs# touch index.html
+root@apachedeploy-6b47bb5dc9-m2f4q:/usr/local/apache2/htdocs# echo "<html><body><marquee><h1>Hey Pod_2</h1></marquee></body></html>" > index.html
+root@apachedeploy-6b47bb5dc9-m2f4q:/usr/local/apache2/htdocs# cat index.html 
+<html><body><marquee><h1>Hey Pod_2</h1></marquee></body></html>
+root@apachedeploy-6b47bb5dc9-m2f4q:/usr/local/apache2/htdocs# 

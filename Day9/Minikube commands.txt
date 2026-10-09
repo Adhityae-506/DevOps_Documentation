@@ -1,0 +1,1855 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\adhit> minikube version
+minikube version: v1.39.0
+commit: 7a9f6a841470a207de8cf4bafcccee0969d8ba10
+PS C:\Users\adhit> minikube start
+* minikube v1.39.0 on Microsoft Windows 11 Home Single Language 26H2
+* Unable to pick a default driver. Here is what was considered, in preference order:
+  - docker: Not healthy: "docker version --format {{.Server.Os}}-{{.Server.Version}}:{{.Server.Platform.Name}}" exit status 1: failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+  - docker: Suggestion:  <https://minikube.sigs.k8s.io/docs/drivers/docker/>
+  - hyperv: Not healthy: Hyper-V requires Administrator privileges
+  - hyperv: Suggestion: Right-click the PowerShell icon and select Run as Administrator to open PowerShell in elevated mode. <>
+* Alternatively you could install one of these drivers:
+  - virtualbox: Not installed: unable to find VBoxManage in $PATH
+  - podman: Not installed: exec: "podman": executable file not found in %PATH%
+  - qemu2: Not installed: exec: "qemu-system-x86_64": executable file not found in %PATH%
+
+X Exiting due to DRV_NOT_HEALTHY: Found driver(s) but none were healthy. See above for suggestions how to fix installed drivers.
+
+PS C:\Users\adhit> minikube start
+* minikube v1.39.0 on Microsoft Windows 11 Home Single Language 26H2
+* Automatically selected the docker driver
+* Using Docker Desktop driver with root privileges
+* Starting "minikube" primary control-plane node in "minikube" cluster
+* Pulling base image v0.0.51 ...
+* Downloading Kubernetes v1.37.0 preload ...
+    > gcr.io/k8s-minikube/kicbase:  507.61 MiB / 507.61 MiB  100.00% 1.96 MiB p
+* Creating docker container (CPUs=2, Memory=4000MB) ...
+* Preparing Kubernetes v1.37.0 on containerd 2.3.4 ...
+    > kubectl.sha256:  64 B / 64 B [-------------------------] 100.00% ? p/s 0s
+    > kubelet.sha256:  64 B / 64 B [-------------------------] 100.00% ? p/s 0s
+    > kubeadm.sha256:  64 B / 64 B [-------------------------] 100.00% ? p/s 0s
+    > kubectl:  59.02 MiB / 59.02 MiB [--------------] 100.00% 1.07 MiB p/s 55s
+    > kubelet:  58.41 MiB / 58.41 MiB [-----------] 100.00% 953.45 KiB p/s 1m3s
+    > kubeadm:  71.12 MiB / 71.12 MiB [----------] 100.00% 919.43 KiB p/s 1m19s
+* Configuring CNI (Container Networking Interface) ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: storage-provisioner, default-storageclass
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\adhit> minikube kubectl -- get nodes
+E1007 10:18:35.817686   22452 memcache.go:381] "Couldn't get current server API group list" err="Get \"https://127.0.0.1:62862/api?timeout=32s\": dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it."
+E1007 10:18:35.819685   22452 memcache.go:381] "Couldn't get current server API group list" err="Get \"https://127.0.0.1:62862/api?timeout=32s\": dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it."
+E1007 10:18:35.820215   22452 memcache.go:381] "Couldn't get current server API group list" err="Get \"https://127.0.0.1:62862/api?timeout=32s\": dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it."
+E1007 10:18:35.821114   22452 memcache.go:381] "Couldn't get current server API group list" err="Get \"https://127.0.0.1:62862/api?timeout=32s\": dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it."
+E1007 10:18:35.822248   22452 memcache.go:381] "Couldn't get current server API group list" err="Get \"https://127.0.0.1:62862/api?timeout=32s\": dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it."
+Unable to connect to the server: dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it.
+PS C:\Users\adhit> minikube kubectl -- get nodes
+E1007 10:19:28.414890   21408 memcache.go:381] "Couldn't get current server API group list" err="Get \"https://127.0.0.1:62862/api?timeout=32s\": dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it."
+E1007 10:19:28.416485   21408 memcache.go:381] "Couldn't get current server API group list" err="Get \"https://127.0.0.1:62862/api?timeout=32s\": dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it."
+E1007 10:19:28.417531   21408 memcache.go:381] "Couldn't get current server API group list" err="Get \"https://127.0.0.1:62862/api?timeout=32s\": dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it."
+E1007 10:19:28.418047   21408 memcache.go:381] "Couldn't get current server API group list" err="Get \"https://127.0.0.1:62862/api?timeout=32s\": dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it."
+E1007 10:19:28.419608   21408 memcache.go:381] "Couldn't get current server API group list" err="Get \"https://127.0.0.1:62862/api?timeout=32s\": dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it."
+Unable to connect to the server: dial tcp 127.0.0.1:62862: connectex: No connection could be made because the target machine actively refused it.
+PS C:\Users\adhit> minikube start
+* minikube v1.39.0 on Microsoft Windows 11 Home Single Language 26H2
+* Using the docker driver based on existing profile
+* Starting "minikube" primary control-plane node in "minikube" cluster
+* Pulling base image v0.0.51 ...
+* Downloading Kubernetes v1.37.0 preload ...
+    > preloaded-images-k8s-v18-v1...:  347.58 MiB / 347.58 MiB  100.00% 17.15 M
+* Restarting existing docker container for "minikube" ...
+! StartHost failed, but will try again: driver start: start: docker start minikube: exit status 1
+stdout:
+
+stderr:
+Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: unable to apply cgroup configuration: failed to write 709: write /sys/fs/cgroup/docker/6f76ff7089d267cb1dcf537eae895ffe7d827f00812eed198f04e7db7535c20f/cgroup.procs: device or resource busy
+failed to start containers: minikube
+
+* Restarting existing docker container for "minikube" ...
+* Preparing Kubernetes v1.37.0 on containerd 2.3.4 ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: storage-provisioner, default-storageclass
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+PS C:\Users\adhit> minikube kubectl -- get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   63m   v1.37.0
+PS C:\Users\adhit> minikube kubectl -- get pods -A
+NAMESPACE     NAME                               READY   STATUS    RESTARTS      AGE
+kube-system   coredns-559f6c778d-lsvkk           0/1     Running   1 (47s ago)   63m
+kube-system   etcd-minikube                      1/1     Running   1 (47s ago)   63m
+kube-system   kindnet-vwh7c                      1/1     Running   1 (47s ago)   63m
+kube-system   kube-apiserver-minikube            1/1     Running   1 (47s ago)   63m
+kube-system   kube-controller-manager-minikube   1/1     Running   1 (47s ago)   63m
+kube-system   kube-proxy-mzn4j                   1/1     Running   1 (47s ago)   63m
+kube-system   kube-scheduler-minikube            1/1     Running   1 (47s ago)   63m
+kube-system   storage-provisioner                1/1     Running   2 (15s ago)   63m
+PS C:\Users\adhit> minikube kubectl --run apachepod --image=httpd
+Error: unknown flag: --run
+See 'minikube kubectl --help' for usage.
+PS C:\Users\adhit> minikube kubectl -- run apachepod --image=httpd
+pod/apachepod created
+PS C:\Users\adhit> minikube kubectl -- describe pod apachepod
+Name:             apachepod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 10:23:43 +0530
+Labels:           run=apachepod
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.3
+IPs:
+  IP:  10.244.0.3
+Containers:
+  apachepod:
+    Container ID:   containerd://69e2e3ec499f74b6609fa042c128c9cfc2c5eb04b70b797948c1a775bd8575c0
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 10:23:52 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-z6hg4 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-z6hg4:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  28s   default-scheduler  Successfully assigned default/apachepod to minikube
+  Normal  Pulling    27s   kubelet            spec.containers{apachepod}: Pulling image "httpd"
+  Normal  Pulled     19s   kubelet            spec.containers{apachepod}: Successfully pulled image "httpd" in 8.282s (8.282s including waiting). Image size: 45334220 bytes.
+  Normal  Created    19s   kubelet            spec.containers{apachepod}: Container created
+  Normal  Started    19s   kubelet            spec.containers{apachepod}: Container started
+PS C:\Users\adhit> minikube kubectl -- logs apachepod
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 10.244.0.3. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 10.244.0.3. Set the 'ServerName' directive globally to suppress this message
+[Wed Oct 07 04:53:52.445141 2026] [mpm_event:notice] [pid 1:tid 1] AH00489: Apache/2.4.69 (Unix) configured -- resuming normal operations
+[Wed Oct 07 04:53:52.445301 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'httpd -D FOREGROUND'
+PS C:\Users\adhit> minikube kubectl -- exec -it apachepod -- /bin/bash
+root@apachepod:/usr/local/apache2# ls
+bin  build  cgi-bin  conf  error  htdocs  icons  include  logs  modules
+root@apachepod:/usr/local/apache2# cd htdocs
+root@apachepod:/usr/local/apache2/htdocs# ls
+index.html
+root@apachepod:/usr/local/apache2/htdocs# minikube kubectl -- delete pod apachepod
+bash: minikube: command not found
+root@apachepod:/usr/local/apache2/htdocs# exit
+exit
+command terminated with exit code 127
+PS C:\Users\adhit> minikube kubectl -- delete pod apachepod
+pod "apachepod" deleted from default namespace
+PS C:\Users\adhit> minikube kubectl -- get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   70m   v1.37.0
+PS C:\Users\adhit> minikube kubectl -- get pods
+No resources found in default namespace.
+PS C:\Users\adhit> notepad simplepod.yaml
+PS C:\Users\adhit> del .\simplepod.yaml
+PS C:\Users\adhit> ls
+
+
+    Directory: C:\Users\adhit
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        13-05-2026     18:02                .anaconda
+d-----        23-09-2026     19:45                .android
+d-----        01-10-2026     13:39                .aws
+d-----        14-09-2026     18:36                .cache
+d-----        23-03-2026     10:31                .cagent
+d-----        07-10-2026     08:50                .codex
+d-----        23-03-2026     10:27                .config
+d-----        22-05-2025     17:27                .continuum
+d-----        26-09-2026     08:58                .copilot
+d-----        07-10-2026     10:19                .docker
+d-----        04-05-2026     16:25                .ghcp-appmod
+d-----        04-05-2026     16:25                .ghcp-appmod-java
+d-----        16-08-2026     21:37                .gradle
+d-----        13-05-2026     18:20                .ipynb_checkpoints
+d-----        13-05-2026     18:20                .ipython
+d-----        20-08-2026     21:48                .javacpp
+d-----        13-05-2026     18:26                .jupyter
+d-----        07-10-2026     10:20                .kube
+d-----        30-10-2025     11:37                .m2
+d-----        09-11-2025     00:04                .matplotlib
+d-----        07-10-2026     10:20                .minikube
+d-----        12-09-2024     23:02                .nuget
+d-----        06-08-2026     00:47                .ollama
+d-----        16-08-2026     19:48                .skiko
+d-----        24-09-2026     18:04                .ssh
+d-----        04-09-2024     22:41                .TurboVPN
+d-----        04-10-2026     22:40                .vscode
+d-----        30-04-2026     19:10                .vscode-shared
+d-----        14-05-2026     00:26                AIML Codes
+d-r---        24-12-2024     11:17                Contacts
+d-----        06-08-2026     15:28                CrossDevice
+d-----        29-08-2026     19:21                DaVinci Resolve Media
+d-----        28-07-2024     08:07                Documents
+d-r---        07-10-2026     08:56                Downloads
+d-r---        24-12-2024     11:17                Favorites
+d-----        11-07-2026     10:23                fvm
+d-----        24-07-2026     11:51                go
+d-r---        24-12-2024     11:17                Links
+dar--l        07-10-2026     08:53                OneDrive
+d-----        23-09-2025     23:40                Postman
+d-r---        24-12-2024     11:17                Saved Games
+d-----        24-04-2026     08:27                ScreenRec_app
+d-r---        24-12-2024     11:17                Searches
+d-----        05-02-2026     23:53                venv
+d-----        17-08-2024     13:02                vimfiles
+-a----        25-09-2026     18:57           2312 .bash_history
+-a----        14-09-2025     09:29          21908 .boto
+-a----        11-07-2026     11:42             16 .emulator_console_auth_token
+-a----        12-06-2025     21:22             68 .gitconfig
+-a----        06-10-2026     23:13             20 .lesshst
+-a----        20-09-2025     15:45            299 .node_repl_history
+-a----        22-05-2026     23:09            146 .python_history
+-a----        25-09-2026     10:50          17139 .viminfo
+-a----        05-10-2026     23:40            121 .yarnrc
+-a----        05-02-2026     23:14        2193376 get-pip.py
+-a----        05-10-2026     14:53          20183 _viminfo
+
+
+PS C:\Users\adhit> l:
+PS L:\> cd .\Adhi_Codes\
+PS L:\Adhi_Codes> cd '.\Cloud Computing\'
+PS L:\Adhi_Codes\Cloud Computing> cd .\DevOps_documentation\
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation> cd .\Day9\
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> vim simplepod.yaml
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> ls
+
+
+    Directory: L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        07-10-2026     11:05            523 .simplepod.yaml.un~
+-a----        07-10-2026     10:18              0 Minikube commands.txt
+-a----        07-10-2026     11:05            238 simplepod.yaml
+
+
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> code .
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- apply -f .\simplepod.yaml
+pod/nginx created
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get pods
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   1/1     Running   0          20s
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- delete -f .\simplepod.yaml
+pod "nginx" deleted from default namespace
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- create deployment nginxdeploy --image=nginx:1.30
+deployment.apps/nginxdeploy created
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubtctl -- get deply
+Error: unknown command "kubtctl" for "minikube"
+
+Did you mean this?
+        kubectl
+
+Run 'minikube --help' for usage.
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubtctl -- get deploy
+Error: unknown command "kubtctl" for "minikube"
+
+Did you mean this?
+        kubectl
+
+Run 'minikube --help' for usage.
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get deploy
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+nginxdeploy   1/1     1            1           26s
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- scale deployment nginxdeploy --replicas=5
+deployment.apps/nginxdeploy scaled
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get deploy
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+nginxdeploy   2/5     5            2           55s
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get pods
+NAME                           READY   STATUS    RESTARTS   AGE
+nginxdeploy-6c997dd56f-2rkd8   1/1     Running   0          13m
+nginxdeploy-6c997dd56f-4d567   1/1     Running   0          13m
+nginxdeploy-6c997dd56f-mqqld   1/1     Running   0          14m
+nginxdeploy-6c997dd56f-r6gm9   1/1     Running   0          13m
+nginxdeploy-6c997dd56f-z4ct5   1/1     Running   0          13m
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- set image deployment/nginxdeploy nginx:nginx:1.30.5
+error: there is no need to specify a resource type as a separate argument when passing arguments in resource/name form (e.g. 'kubectl.exe get resource/<resource_name>' instead of 'kubectl.exe get resource resource/<resource_name>'
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get pods
+NAME                           READY   STATUS    RESTARTS   AGE
+nginxdeploy-6c997dd56f-2rkd8   1/1     Running   0          14m
+nginxdeploy-6c997dd56f-4d567   1/1     Running   0          14m
+nginxdeploy-6c997dd56f-mqqld   1/1     Running   0          15m
+nginxdeploy-6c997dd56f-r6gm9   1/1     Running   0          14m
+nginxdeploy-6c997dd56f-z4ct5   1/1     Running   0          14m
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get deploy
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+nginxdeploy   5/5     5            5           15m
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- set image deployment/nginxdeploy nginx:httpd
+error: there is no need to specify a resource type as a separate argument when passing arguments in resource/name form (e.g. 'kubectl.exe get resource/<resource_name>' instead of 'kubectl.exe get resource resource/<resource_name>'
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get deploy
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+nginxdeploy   5/5     5            5           16m
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- describe pod nginxdeploy
+Name:             nginxdeploy-6c997dd56f-2rkd8
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 11:40:54 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=6c997dd56f
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.9
+IPs:
+  IP:           10.244.0.9
+Controlled By:  ReplicaSet/nginxdeploy-6c997dd56f
+Containers:
+  nginx:
+    Container ID:   containerd://69ccb863fc89e52fb1f08516b10dd01b849651faca9a0a67e30f61e521c53aa3
+    Image:          nginx:1.30
+    Image ID:       docker.io/library/nginx@sha256:9bf97bd7714f5e24c1ccd545ecb9eb5435cb6d109c97cebb15e7e455e0239edb
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 11:40:57 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-6wrfh (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-6wrfh:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-6c997dd56f-4d567
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 11:40:54 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=6c997dd56f
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.6
+IPs:
+  IP:           10.244.0.6
+Controlled By:  ReplicaSet/nginxdeploy-6c997dd56f
+Containers:
+  nginx:
+    Container ID:   containerd://650eed00f44815273583e75faf2440f484178568c2b188f3c3f8889552c798b2
+    Image:          nginx:1.30
+    Image ID:       docker.io/library/nginx@sha256:9bf97bd7714f5e24c1ccd545ecb9eb5435cb6d109c97cebb15e7e455e0239edb
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 11:40:57 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-kxkbq (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-kxkbq:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-6c997dd56f-mqqld
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 11:40:04 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=6c997dd56f
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.5
+IPs:
+  IP:           10.244.0.5
+Controlled By:  ReplicaSet/nginxdeploy-6c997dd56f
+Containers:
+  nginx:
+    Container ID:   containerd://4192cdfd7c5198280824c6e2dfe3183a9f07e2c37ccf776eb2a2df235d4e80ad
+    Image:          nginx:1.30
+    Image ID:       docker.io/library/nginx@sha256:9bf97bd7714f5e24c1ccd545ecb9eb5435cb6d109c97cebb15e7e455e0239edb
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 11:40:13 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-hmmlb (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-hmmlb:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-6c997dd56f-r6gm9
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 11:40:54 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=6c997dd56f
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.7
+IPs:
+  IP:           10.244.0.7
+Controlled By:  ReplicaSet/nginxdeploy-6c997dd56f
+Containers:
+  nginx:
+    Container ID:   containerd://302ced5166e2c8443258b2726c827b890816e3fd62ec024cc5a34a3dc135747e
+    Image:          nginx:1.30
+    Image ID:       docker.io/library/nginx@sha256:9bf97bd7714f5e24c1ccd545ecb9eb5435cb6d109c97cebb15e7e455e0239edb
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 11:40:57 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-wcj5x (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-wcj5x:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-6c997dd56f-z4ct5
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 11:40:54 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=6c997dd56f
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.8
+IPs:
+  IP:           10.244.0.8
+Controlled By:  ReplicaSet/nginxdeploy-6c997dd56f
+Containers:
+  nginx:
+    Container ID:   containerd://7b11f75a2583da5616ff79a7eed4d717ccb52b120736c28e996690c64784f0be
+    Image:          nginx:1.30
+    Image ID:       docker.io/library/nginx@sha256:9bf97bd7714f5e24c1ccd545ecb9eb5435cb6d109c97cebb15e7e455e0239edb
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 11:40:57 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-x45z9 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-x45z9:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- describe pod nginxdeploy-6c997dd56f-2rkd8
+Name:             nginxdeploy-6c997dd56f-2rkd8
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 11:40:54 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=6c997dd56f
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.9
+IPs:
+  IP:           10.244.0.9
+Controlled By:  ReplicaSet/nginxdeploy-6c997dd56f
+Containers:
+  nginx:
+    Container ID:   containerd://69ccb863fc89e52fb1f08516b10dd01b849651faca9a0a67e30f61e521c53aa3
+    Image:          nginx:1.30
+    Image ID:       docker.io/library/nginx@sha256:9bf97bd7714f5e24c1ccd545ecb9eb5435cb6d109c97cebb15e7e455e0239edb
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 11:40:57 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-6wrfh (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-6wrfh:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  19m   default-scheduler  Successfully assigned default/nginxdeploy-6c997dd56f-2rkd8 to minikube
+  Normal  Pulled     19m   kubelet            spec.containers{nginx}: Container image "nginx:1.30" already present on machine and can be accessed by the pod
+  Normal  Created    19m   kubelet            spec.containers{nginx}: Container created
+  Normal  Started    19m   kubelet            spec.containers{nginx}: Container started
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- set image deployment/nginxdeploy nginx=nginx:1.30.5
+deployment.apps/nginxdeploy image updated
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get deploy
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+nginxdeploy   4/5     3            4           20m
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get deploy
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+nginxdeploy   4/5     4            4           20m
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get deploy
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+nginxdeploy   4/5     5            4           20m
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get pods
+NAME                           READY   STATUS    RESTARTS   AGE
+nginxdeploy-86765cb76d-dlbmt   1/1     Running   0          10s
+nginxdeploy-86765cb76d-gdfdg   1/1     Running   0          15s
+nginxdeploy-86765cb76d-mpsgd   1/1     Running   0          15s
+nginxdeploy-86765cb76d-rdnwm   1/1     Running   0          9s
+nginxdeploy-86765cb76d-x9h8w   1/1     Running   0          15s
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get deploy
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+nginxdeploy   5/5     5            5           20m
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- set image deployment/nginxdeploy nginx=httpd
+deployment.apps/nginxdeploy image updated
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get deploy
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+nginxdeploy   4/5     3            4           21m
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get deploy
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+nginxdeploy   5/5     4            5           21m
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- describe pod nginxdeploy
+Name:             nginxdeploy-5b995d68cc-2fsx5
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:01:05 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.19
+IPs:
+  IP:           10.244.0.19
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://af789f463ba3490b0cd115b1fe2b41ae2cd2bfb36212cc13f824000d7284adc4
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:01:08 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-4n7n7 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-4n7n7:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-675q5
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:01:01 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.17
+IPs:
+  IP:           10.244.0.17
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://e4e8660b2bb9defdc06dfd62c7cdd11dcca6e125da528dfb7145d509140d4e40
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:01:03 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-47frg (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-47frg:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-hnr79
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:01:01 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.16
+IPs:
+  IP:           10.244.0.16
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://84efaac7473d10da082d20c51d29d8a2c5a310f84835347f57b9433f558bccd6
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:01:03 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-lqzkn (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-lqzkn:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-pgx9r
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:01:01 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.15
+IPs:
+  IP:           10.244.0.15
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://2f8985cae2340e8fdf03b69c14225c13de54cae84253d1ec5f8c757fa7cc39c5
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:01:03 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-lf2vm (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-lf2vm:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-z7z5n
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:01:04 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.18
+IPs:
+  IP:           10.244.0.18
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://2832b71c8122cfda623e2a2dda0bc6508c4c87c31495b829339abc94522823d8
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:01:08 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-js5zq (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-js5zq:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-86765cb76d-x9h8w
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:00:24 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=86765cb76d
+Annotations:      <none>
+Status:           Succeeded
+IP:               10.244.0.10
+IPs:
+  IP:           10.244.0.10
+Controlled By:  ReplicaSet/nginxdeploy-86765cb76d
+Containers:
+  nginx:
+    Container ID:   containerd://a82c8965b835eebf5ac3402d7a68186692787025ad95cc3c4ff9431e8ca31cba
+    Image:          nginx:1.30.5
+    Image ID:       docker.io/library/nginx@sha256:9bf97bd7714f5e24c1ccd545ecb9eb5435cb6d109c97cebb15e7e455e0239edb
+    Port:           <none>
+    Host Port:      <none>
+    State:          Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Wed, 07 Oct 2026 12:00:29 +0530
+      Finished:     Wed, 07 Oct 2026 12:01:09 +0530
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-mtthc (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   False
+  Initialized                 True
+  Ready                       False
+  ContainersReady             False
+  PodScheduled                True
+Volumes:
+  kube-api-access-mtthc:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- describe pod nginxdeploy
+Name:             nginxdeploy-5b995d68cc-2fsx5
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:01:05 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.19
+IPs:
+  IP:           10.244.0.19
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://af789f463ba3490b0cd115b1fe2b41ae2cd2bfb36212cc13f824000d7284adc4
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:01:08 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-4n7n7 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-4n7n7:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-675q5
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:01:01 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.17
+IPs:
+  IP:           10.244.0.17
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://e4e8660b2bb9defdc06dfd62c7cdd11dcca6e125da528dfb7145d509140d4e40
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:01:03 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-47frg (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-47frg:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-hnr79
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:01:01 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.16
+IPs:
+  IP:           10.244.0.16
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://84efaac7473d10da082d20c51d29d8a2c5a310f84835347f57b9433f558bccd6
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:01:03 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-lqzkn (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-lqzkn:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-pgx9r
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:01:01 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.15
+IPs:
+  IP:           10.244.0.15
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://2f8985cae2340e8fdf03b69c14225c13de54cae84253d1ec5f8c757fa7cc39c5
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:01:03 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-lf2vm (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-lf2vm:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-z7z5n
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:01:04 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.18
+IPs:
+  IP:           10.244.0.18
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://2832b71c8122cfda623e2a2dda0bc6508c4c87c31495b829339abc94522823d8
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:01:08 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-js5zq (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-js5zq:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- set image deployment/nginxdeploy httpd=nginx
+error: unable to find container named "httpd"
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- delete pod nginxdeploy
+Error from server (NotFound): pods "nginxdeploy" not found
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get pod
+NAME                           READY   STATUS    RESTARTS   AGE
+nginxdeploy-5b995d68cc-2fsx5   1/1     Running   0          14m
+nginxdeploy-5b995d68cc-675q5   1/1     Running   0          15m
+nginxdeploy-5b995d68cc-hnr79   1/1     Running   0          15m
+nginxdeploy-5b995d68cc-pgx9r   1/1     Running   0          15m
+nginxdeploy-5b995d68cc-z7z5n   1/1     Running   0          14m
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- delete pod nginxdeploy-5b995d68cc-2fsx5 nginxdeploy-5b995d68cc-675q5 nginxdeploy-5b995d68cc-hnr79 nginxdeploy-5b995d68cc-pgx9r nginxdeploy-5b995d68cc-z7z5n
+pod "nginxdeploy-5b995d68cc-2fsx5" deleted from default namespace
+pod "nginxdeploy-5b995d68cc-675q5" deleted from default namespace
+pod "nginxdeploy-5b995d68cc-hnr79" deleted from default namespace
+pod "nginxdeploy-5b995d68cc-pgx9r" deleted from default namespace
+pod "nginxdeploy-5b995d68cc-z7z5n" deleted from default namespace
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get pod
+NAME                           READY   STATUS    RESTARTS   AGE
+nginxdeploy-5b995d68cc-5b59t   1/1     Running   0          10s
+nginxdeploy-5b995d68cc-kvfdl   1/1     Running   0          10s
+nginxdeploy-5b995d68cc-mvxml   1/1     Running   0          10s
+nginxdeploy-5b995d68cc-pj59r   1/1     Running   0          10s
+nginxdeploy-5b995d68cc-vfrfs   1/1     Running   0          10s
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- get pods
+NAME                           READY   STATUS    RESTARTS   AGE
+nginxdeploy-5b995d68cc-5b59t   1/1     Running   0          21s
+nginxdeploy-5b995d68cc-kvfdl   1/1     Running   0          21s
+nginxdeploy-5b995d68cc-mvxml   1/1     Running   0          21s
+nginxdeploy-5b995d68cc-pj59r   1/1     Running   0          21s
+nginxdeploy-5b995d68cc-vfrfs   1/1     Running   0          21s
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- rollout status deployment/nginxdeploy
+deployment "nginxdeploy" successfully rolled out
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- describe pod nginxdeploy
+Name:             nginxdeploy-5b995d68cc-5b59t
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:16:47 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.24
+IPs:
+  IP:           10.244.0.24
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://593c368a86765688aaafbaab1fff39519675cb3053b75d8be047aac764d595ac
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:16:53 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-th9mt (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-th9mt:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-kvfdl
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:16:47 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.22
+IPs:
+  IP:           10.244.0.22
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://95ed376168235ca156bc5759b8f04f3cfea48456560afa51c3a5489f271c94bd
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:16:53 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-6zccm (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-6zccm:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-mvxml
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:16:47 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.21
+IPs:
+  IP:           10.244.0.21
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://81442a31298b57b67f21ab439e953b0a3c6b8a2e0863ea12e26966069e0769fe
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:16:53 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-hzgrm (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-hzgrm:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-pj59r
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:16:47 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.20
+IPs:
+  IP:           10.244.0.20
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://4f73ffef0787c3abb1a5cba309458f8b97a5069442661ef42ca1cf8792bd926a
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:16:52 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-7rmqw (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-7rmqw:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-5b995d68cc-vfrfs
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:16:47 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.23
+IPs:
+  IP:           10.244.0.23
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://436f5cb4c4da7bca7d8452769dda3e2ed94eeb38a8ee34f2afc4743f4c081d97
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:16:53 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-fpgpl (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-fpgpl:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- rollout undo deployment/nginxdeploy
+deployment.apps/nginxdeploy rolled back
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9> minikube kubectl -- describe pod nginxdeploy
+Name:             nginxdeploy-5b995d68cc-5b59t
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:16:47 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=5b995d68cc
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.24
+IPs:
+  IP:           10.244.0.24
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://593c368a86765688aaafbaab1fff39519675cb3053b75d8be047aac764d595ac
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:16:53 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-th9mt (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-th9mt:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:                      nginxdeploy-5b995d68cc-kvfdl
+Namespace:                 default
+Priority:                  0
+Service Account:           default
+Node:                      minikube/192.168.49.2
+Start Time:                Wed, 07 Oct 2026 12:16:47 +0530
+Labels:                    app=nginxdeploy
+                           pod-template-hash=5b995d68cc
+Annotations:               <none>
+Status:                    Terminating (lasts <invalid>)
+Termination Grace Period:  30s
+IP:                        10.244.0.22
+IPs:
+  IP:           10.244.0.22
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://95ed376168235ca156bc5759b8f04f3cfea48456560afa51c3a5489f271c94bd
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:16:53 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-6zccm (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-6zccm:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:                      nginxdeploy-5b995d68cc-pj59r
+Namespace:                 default
+Priority:                  0
+Service Account:           default
+Node:                      minikube/192.168.49.2
+Start Time:                Wed, 07 Oct 2026 12:16:47 +0530
+Labels:                    app=nginxdeploy
+                           pod-template-hash=5b995d68cc
+Annotations:               <none>
+Status:                    Terminating (lasts <invalid>)
+Termination Grace Period:  30s
+IP:                        10.244.0.20
+IPs:
+  IP:           10.244.0.20
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://4f73ffef0787c3abb1a5cba309458f8b97a5069442661ef42ca1cf8792bd926a
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:16:52 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-7rmqw (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-7rmqw:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:                      nginxdeploy-5b995d68cc-vfrfs
+Namespace:                 default
+Priority:                  0
+Service Account:           default
+Node:                      minikube/192.168.49.2
+Start Time:                Wed, 07 Oct 2026 12:16:47 +0530
+Labels:                    app=nginxdeploy
+                           pod-template-hash=5b995d68cc
+Annotations:               <none>
+Status:                    Terminating (lasts <invalid>)
+Termination Grace Period:  30s
+IP:                        10.244.0.23
+IPs:
+  IP:           10.244.0.23
+Controlled By:  ReplicaSet/nginxdeploy-5b995d68cc
+Containers:
+  nginx:
+    Container ID:   containerd://436f5cb4c4da7bca7d8452769dda3e2ed94eeb38a8ee34f2afc4743f4c081d97
+    Image:          httpd
+    Image ID:       docker.io/library/httpd@sha256:c842ac797bd1fe8b3cd26d002ac9d948aa2814097544600600b35aef42e6785a
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:16:53 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-fpgpl (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-fpgpl:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-86765cb76d-9nzzq
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:31:52 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=86765cb76d
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.26
+IPs:
+  IP:           10.244.0.26
+Controlled By:  ReplicaSet/nginxdeploy-86765cb76d
+Containers:
+  nginx:
+    Container ID:   containerd://ed5578aeaad55fa9e44e8176560109a72c101bf012eea43f7b9d80a537cf1237
+    Image:          nginx:1.30.5
+    Image ID:       docker.io/library/nginx@sha256:9bf97bd7714f5e24c1ccd545ecb9eb5435cb6d109c97cebb15e7e455e0239edb
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:31:55 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-lmbnf (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-lmbnf:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-86765cb76d-9tfhd
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:31:52 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=86765cb76d
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.27
+IPs:
+  IP:           10.244.0.27
+Controlled By:  ReplicaSet/nginxdeploy-86765cb76d
+Containers:
+  nginx:
+    Container ID:   containerd://fbf550571463195268711a9a21a682ce96bff9eba26a81a4df807abf9cfbcc61
+    Image:          nginx:1.30.5
+    Image ID:       docker.io/library/nginx@sha256:9bf97bd7714f5e24c1ccd545ecb9eb5435cb6d109c97cebb15e7e455e0239edb
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:31:55 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-c8h5c (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-c8h5c:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-86765cb76d-fglv9
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:31:56 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=86765cb76d
+Annotations:      <none>
+Status:           Pending
+IP:
+IPs:              <none>
+Controlled By:    ReplicaSet/nginxdeploy-86765cb76d
+Containers:
+  nginx:
+    Container ID:
+    Image:          nginx:1.30.5
+    Image ID:
+    Port:           <none>
+    Host Port:      <none>
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-6kcm4 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   False
+  Initialized                 True
+  Ready                       False
+  ContainersReady             False
+  PodScheduled                True
+Volumes:
+  kube-api-access-6kcm4:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-86765cb76d-hwn9z
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:31:52 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=86765cb76d
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.25
+IPs:
+  IP:           10.244.0.25
+Controlled By:  ReplicaSet/nginxdeploy-86765cb76d
+Containers:
+  nginx:
+    Container ID:   containerd://5bb3ea4440a1da3495400c707df8e4f12bd7db08849205bf4f7e974453d1e808
+    Image:          nginx:1.30.5
+    Image ID:       docker.io/library/nginx@sha256:9bf97bd7714f5e24c1ccd545ecb9eb5435cb6d109c97cebb15e7e455e0239edb
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 07 Oct 2026 12:31:53 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-fgjzm (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-fgjzm:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+Name:             nginxdeploy-86765cb76d-w6cnt
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 07 Oct 2026 12:31:54 +0530
+Labels:           app=nginxdeploy
+                  pod-template-hash=86765cb76d
+Annotations:      <none>
+Status:           Pending
+IP:
+IPs:              <none>
+Controlled By:    ReplicaSet/nginxdeploy-86765cb76d
+Containers:
+  nginx:
+    Container ID:
+    Image:          nginx:1.30.5
+    Image ID:
+    Port:           <none>
+    Host Port:      <none>
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-jztvc (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   False
+  Initialized                 True
+  Ready                       False
+  ContainersReady             False
+  PodScheduled                True
+Volumes:
+  kube-api-access-jztvc:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+PS L:\Adhi_Codes\Cloud Computing\DevOps_documentation\Day9>
