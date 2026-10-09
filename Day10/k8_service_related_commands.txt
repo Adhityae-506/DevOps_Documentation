@@ -1,0 +1,55 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\adhit> minikube start
+* minikube v1.39.0 on Microsoft Windows 11 Home Single Language 26H2
+* Using the docker driver based on existing profile
+* Starting "minikube" primary control-plane node in "minikube" cluster
+* Pulling base image v0.0.51 ...
+* Downloading Kubernetes v1.37.0 preload ...
+* Updating the running docker "minikube" container ...
+* Preparing Kubernetes v1.37.0 on containerd 2.3.4 ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: storage-provisioner, default-storageclass
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+PS C:\Users\adhit> minikube kubectl -- get svc
+NAME          TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+kubernetes    ClusterIP   10.96.0.1      <none>        443/TCP        25h
+nginxdeploy   NodePort    10.99.103.14   <none>        80:32328/TCP   34m
+PS C:\Users\adhit> minikube kubectl delete service nginxdeploy
+service "nginxdeploy" deleted from default namespace
+PS C:\Users\adhit> minikube kubectl -- get svc
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   25h
+PS C:\Users\adhit> minikube kubectl -- get deploy
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+nginxdeploy   5/5     5            5           23h
+PS C:\Users\adhit> minikube kubectl -- get pods
+NAME                           READY   STATUS    RESTARTS      AGE
+nginxdeploy-86765cb76d-9nzzq   1/1     Running   1 (41m ago)   22h
+nginxdeploy-86765cb76d-9tfhd   1/1     Running   1 (41m ago)   22h
+nginxdeploy-86765cb76d-fglv9   1/1     Running   1 (41m ago)   22h
+nginxdeploy-86765cb76d-hwn9z   1/1     Running   1 (41m ago)   22h
+nginxdeploy-86765cb76d-w6cnt   1/1     Running   1 (41m ago)   22h
+PS C:\Users\adhit> minikube kubectl -- expose deployment nginxdeploy --type=NodePort --port=80
+service/nginxdeploy exposed
+PS C:\Users\adhit> minikube service nginxdeploy
+┌───────────┬─────────────┬─────────────┬───────────────────────────┐
+│ NAMESPACE │    NAME     │ TARGET PORT │            URL            │
+├───────────┼─────────────┼─────────────┼───────────────────────────┤
+│ default   │ nginxdeploy │ 80          │ http://192.168.49.2:31256 │
+└───────────┴─────────────┴─────────────┴───────────────────────────┘
+* Starting tunnel for service nginxdeploy.
+┌───────────┬─────────────┬─────────────┬────────────────────────┐
+│ NAMESPACE │    NAME     │ TARGET PORT │          URL           │
+├───────────┼─────────────┼─────────────┼────────────────────────┤
+│ default   │ nginxdeploy │             │ http://127.0.0.1:64204 │
+└───────────┴─────────────┴─────────────┴────────────────────────┘
+* Opening service default/nginxdeploy in default browser...
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+* Stopping tunnel for service nginxdeploy.
+PS C:\Users\adhit> minikube kubectl -- get svc
+NAME          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+kubernetes    ClusterIP   10.96.0.1        <none>        443/TCP        25h
+nginxdeploy   NodePort    10.108.183.182   <none>        80:31256/TCP   15s
