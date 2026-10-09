@@ -9,10 +9,11 @@ A learning repository containing command notes, configuration files, screenshots
 - **Docker Compose and networking** — multi-container applications and service communication
 - **Jenkins and GHCR** — build-job configuration and publishing container images to GitHub Container Registry
 - **Terraform and AWS** — infrastructure as code, VPCs, subnets, EC2 instances, IAM, and outputs
-- **Kubernetes / Minikube** — introductory Pod manifests and Service-related commands
+- **Kubernetes** — Pods, Deployments, scaling, Services, and local practice with Minikube
+- **Amazon EKS** — connecting to an EKS cluster, inspecting worker nodes, running workloads, scaling Deployments, and exposing services
 - **Practical assignments** — web app containerization and a Jenkins + Terraform Simon Says project
 
-The repository also contains the **Cloud Native DevOps 12-Day Program** PDF used as reference material. The visible day folders currently cover **Day1 through Day10**; the contents may evolve as more exercises are added.
+The repository also contains the **Cloud Native DevOps 12-Day Program** PDF used as reference material. The visible day folders currently cover **Day1 through Day11**; the contents may evolve as more exercises are added.
 
 ## Repository Structure
 
@@ -28,8 +29,9 @@ The repository also contains the **Cloud Native DevOps 12-Day Program** PDF used
     ├── Day6/     # Terraform notes and practice
     ├── Day7/     # Terraform with AWS: VPC, EC2, and IAM resources
     ├── Day8/     # Terraform infrastructure configuration and outputs
-    ├── Day9/     # Kubernetes Pod manifest and Minikube notes
+    ├── Day9/     # Kubernetes Pod manifests and Minikube notes
     ├── Day10/    # Kubernetes Service commands
+    ├── Day11/    # Amazon EKS, worker nodes, Pods, Deployments, scaling, and Services
     ├── Cloud_Native_DevOps_12_Day_Program_Sep24_Oct10_2026 (1).pdf
     └── .gitignore
 
@@ -49,6 +51,7 @@ Each DayN folder holds the notes and artifacts captured for that stage: command 
 | [Day8](Day8/) | Terraform resources, variables, and outputs |
 | [Day9](Day9/) | Kubernetes Pod YAML and Minikube |
 | [Day10](Day10/) | Kubernetes Service commands |
+| [Day11](Day11/) | Amazon EKS, kubeconfig, worker nodes, Pods, Deployments, scaling, and NodePort Services |
 
 These summaries are based on folder and file names. Refer to the individual notes and configuration files for the exact steps and implementation details.
 
@@ -72,7 +75,7 @@ This repository is primarily a documentation and lab-notes collection, rather th
 
 1. Clone the repository:
 
-   git clone https://github.com/Adhityae-506/DevOps_Documentation.git
+   `git clone https://github.com/Adhityae-506/DevOps_Documentation.git`
 
 2. Open the day or assignment folder you want to explore.
 3. Read the accompanying notes before running commands.
@@ -89,8 +92,9 @@ Depending on the exercise, you may need:
 - Jenkins
 - Terraform
 - An AWS account with appropriately scoped IAM permissions
+- AWS CLI and an authorized EKS cluster context for the Day11 EKS exercises
 - A GitHub Personal Access Token with the required GHCR package permissions
-- kubectl and Minikube for Kubernetes exercises
+- kubectl and Minikube for local Kubernetes exercises
 
 You do not need every tool installed just to read the notes.
 
